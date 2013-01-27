@@ -19,9 +19,9 @@ import java.io.InputStreamReader;
 
 
 /**
- * eventSpotter for Stanbol.
+ * eventSpotter.
  *
- * @author Mihaly Heder  <mihaly.heder@sztaki.hu>
+ * 
  */
 /*
 */
