@@ -120,21 +120,21 @@ public class CsvToBean<T> {
         return getPropertyEditorValue(desc.getPropertyType());
     }
     
-    public List<event> myparse(String CSV)
+    public List<Event> myparse(String CSV)
 	{
 		
-		List<event> events= new ArrayList<event>();
+		List<Event> Events= new ArrayList<Event>();
 		while(CSV!=null)
 		{
 			String[] lines = CSV.split("\n");
 			for(String line : lines)
 			{
 				String[] parts = line.split(",");
-				event obj = new event(parts[0],parts[1],parts[2],parts[3],parts[4],parts[5],"aa","sad");
-				events.add(obj);
+				Event obj = new Event(parts[0],parts[1],parts[2],parts[3],parts[4],parts[5],"aa","sad");
+				Events.add(obj);
 			}
 		}
-		return events;
+		return Events;
 		
 	}
 

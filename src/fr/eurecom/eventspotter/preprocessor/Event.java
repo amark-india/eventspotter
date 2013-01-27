@@ -1,6 +1,6 @@
 package fr.eurecom.eventspotter.preprocessor;
 
-public class event 
+public class Event 
 {
   private String eventId;
   private String eventTitle;
@@ -12,11 +12,11 @@ public class event
   private String eventDescription;
   
   
-  public event() 
+  public Event() 
   {}
 
    
-  public event(String eventId, String eventTitle, String publisher, String date, String location, String category, String agent, String eventDescription) 
+  public Event(String eventId, String eventTitle, String publisher, String date, String location, String category, String agent, String eventDescription) 
   {
     super();
     this.eventId = eventId;
