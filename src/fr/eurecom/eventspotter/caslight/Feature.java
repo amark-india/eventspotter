@@ -3,7 +3,7 @@ package fr.eurecom.eventspotter.caslight;
 /**
  * This class represents a UIMA Feature. This class uses generics, so any kind of objects can be feature values. 
  * 
- * @author Mihály Héder <mihaly.heder@sztaki.hu>
+ * 
  */
 public class Feature<E> {
 

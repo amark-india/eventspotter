@@ -9,7 +9,7 @@ import java.util.TreeSet;
 
 /**
  * This class represents a UIMA Feature Structure. 
- * @author Mihály Héder <mihaly.heder@sztaki.hu>
+ * 
  */
 
 public class FeatureStructure {

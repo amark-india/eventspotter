@@ -6,7 +6,7 @@ import java.util.Set;
 
 /**
  * This class hold multiple list of Feature Structures
- * @author Mihaly Heder
+ * 
  */
 public class FeatureStructureListHolder {
     
