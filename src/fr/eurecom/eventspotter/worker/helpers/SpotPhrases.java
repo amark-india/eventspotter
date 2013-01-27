@@ -16,7 +16,7 @@ import fr.eurecom.eventspotter.caslight.FeatureStructure;
 
 /**
  * Spots pre-loaded phrase occurrences in longer texts.
- * @author Mihaly Heder  <mihaly.heder@sztaki.hu>
+ *
  */
 public class SpotPhrases {
 

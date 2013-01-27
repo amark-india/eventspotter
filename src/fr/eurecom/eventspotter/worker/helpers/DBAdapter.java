@@ -12,9 +12,9 @@ import java.util.List;
 
 
 /**
- * This class provides access to the sql database where work id - title, work id - author and author id - author name are relations are stored.
+ * This class provides access to the sql database where  eventId,eventTitle,eventDescription,agents are stored.
  * 
- * @author Mihaly Heder <mihaly.heder@sztaki.hu>
+ * 
  */
 public class DBAdapter {
 

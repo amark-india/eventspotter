@@ -29,7 +29,7 @@ import fr.eurecom.eventspotter.caslight.FeatureStructure;
 /**
  * Tokenizer class derived from UIMA WhitespaceTokenizer.
  *
- * @author Mihaly Heder
+ * 
  */
 public class Tokenizer {
 
@@ -249,7 +249,7 @@ public class Tokenizer {
     public static List<FeatureStructure> sentensize(String input) 
     {    	
     	List<FeatureStructure> ret = new ArrayList<FeatureStructure>();
-    	String [] sentence=input.split("\n|\r\n|\r");
+    	String [] sentence=input.split(".");
     	int [] sent_end;
     	int startpos=0;
     	int endpos=0;

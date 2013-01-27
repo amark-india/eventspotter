@@ -16,10 +16,10 @@ import java.util.Set;
 
 
 /**
- * event Spotter. 
- * This 
+ * eventspotter. 
  * 
- * @author Mihaly Heder  <mihaly.heder@sztaki.hu>
+ * 
+ * 
  */
 public class EventSpotterLight {
 
@@ -250,11 +250,13 @@ public class EventSpotterLight {
                 	 {
                 		 
                 		 fs.addFeature(new Feature<Double>("confidence",confidence ));
-                		 continue;
+                		 
                 	 } 
+                	 else
+                	 {
                 	  confidence=cs.run(doc1,doc2);
                 	 fs.addFeature(new Feature<Double>("confidence",confidence ));
-                	 
+                	 }
                  } catch (IOException e) {
                      // TODO Auto-generated catch block
                      e.printStackTrace();

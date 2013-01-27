@@ -6,7 +6,7 @@ import java.text.DecimalFormat;
 
 /**
  * Helper class to measure elapsed time.
- * @author Mihály Héder <mihaly.heder@sztaki.hu>
+ * 
  */
 public class NanoTime {
 
