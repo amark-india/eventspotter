@@ -25,7 +25,7 @@ import org.apache.lucene.util.Version;
 public class CosineSimilarity {
     public String[] s=new String[2];
     
-  public static void main(String[] args) {
+ /* public static void main(String[] args) {
         CosineSimilarity cs = new CosineSimilarity();
         try {
         	String doc1=" Cervantes’ Masterpiece and KGNU Present Take It To The Bridge Festival ft. The Motet, Black Uhuru, See-I (Featuring 6 Members of Thievery Corporation) and That 1 Guy w/ Euforquestra, Dubskin, Nicki Bluhm and the Gramblers, Mikey Thunder, Bedrockk, Atomga, Jaden Carlson Trio, Rally Round The Family (Rage Against The Machine Tribute), She Said String Band, Jonah And The Whales and Your Babies Daddy <br> Saturday, July, 21 at <a href=\"\"http://www.cervantesmasterpiece.com/venue/detail/state-bridge-lodge\"\" rel=\"\"nofollow\"\">State Bridge Lodge</a> <br> 2:30 PM (2:00 PM doors) / 21+ w/ Valid ID ";
@@ -36,7 +36,7 @@ public class CosineSimilarity {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-    }
+    }*/
     public double run(String doc1,String doc2) throws IOException 
     {
         // index strings

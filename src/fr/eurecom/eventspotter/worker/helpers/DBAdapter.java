@@ -58,7 +58,7 @@ public class DBAdapter {
      * @param workId the id of the work in question
      * @return the names of the authors.
      */
-    public List<String> getAuthors(String eventId) {
+    public List<String> getAgents(String eventId) {
         try {
             Connection c = getConnection();
             PreparedStatement pstmt = c.prepareStatement("SELECT agent FROM eventMedia WHERE eventId='"+eventId+"'");

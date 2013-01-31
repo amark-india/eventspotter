@@ -81,12 +81,7 @@ public class EventSpotterLight {
             }
 
             HashMap<String, String> entries = new HashMap<String, String>();
-           /* if (eventId.startsWith("OL")) {
-                eventId = "/works/" + eventId;
-            }
-                eventId = eventId.replaceFirst("BNB", "");
-                eventId = "http://bnb.data.bl.uk/id/resource/" + eventId;
-            }*/
+
             
             String hyphen = "-";  
 		    StringBuffer str = new StringBuffer (eventId);  
@@ -112,7 +107,7 @@ public class EventSpotterLight {
             
 
 
-            List<String> agents = dbAdapter.getAuthors(eventId);
+            List<String> agents = dbAdapter.getAgents(eventId);
             int agentTokenNum = 0;
             if (agents == null) {
                 continue;
@@ -160,108 +155,37 @@ public class EventSpotterLight {
                     }
                     uniqueAgentToks.add(fsAT.getCoveredText());
                 }
-                String Prevline;
-                String Curline;
-                String Nextline;
-                int curpos=0;
-                StringBuffer Surround = new StringBuffer();
-                 for(FeatureStructure sen: sentences)
-                 { 
-                	 int sent_beg= sen.getFeature("begin").getValueAsInteger();
-                	 int event_beg= fs.getFeature("begin").getValueAsInteger();
-                	 int sent_end= sen.getFeature("end").getValueAsInteger();
-                	 if((sent_beg<event_beg)&&(event_beg<sent_end))
-                	 {
-                		curpos=sen.getFeature("number").getValueAsInteger();
-                		
-              
-                     }
-                 }
-                 int last_sent=sentences.size();
-                 for(FeatureStructure sen: sentences)
-                 {
-                	
-                	 int sent_count=sen.getFeature("number").getValueAsInteger();
-                	 if(curpos!=1 && curpos!=last_sent)                	
-                	 {
-                		 if(sent_count== (curpos-1))
-                		 {
-                			 Prevline=sen.getCoveredText();
-                			 Surround.append(Prevline);
-                		 }
-                		 if(sent_count==curpos)
-                		 {
-                			 Curline=sen.getCoveredText();
-                			 Surround.append(Curline);
-                		 }
-                	 
-                		 if(sent_count==(curpos+1))
-                		 {
-                			 Nextline=sen.getCoveredText();
-                			 Surround.append(Nextline);
-                		 }
-                	 }
-                	 
-                     if(curpos==1)
-                     {
-                    	 if(sent_count==curpos)
-                    	 {
-                    		 Curline=sen.getCoveredText();
-                    		 Surround.append(Curline);
-                    	 }
-                    	 
-                    	 if(sent_count==(curpos+1))
-                    	 {
-                    		 Nextline=sen.getCoveredText();
-                    		 Surround.append(Nextline);
-                    	 }
-                    	 
-                     }
-                     if(curpos==last_sent)
-                     {
-                     	
-                    		 if(sent_count== (curpos-1))
-                        	 {
-                        		 Prevline=sen.getCoveredText();
-                        		 Surround.append(Prevline);
-                        	 }
-                        	 if(sent_count==curpos)
-                        	 {
-                        		 Curline=sen.getCoveredText();
-                        		 Surround.append(Curline);
-                        	 }
-                     }
-        
-                	
-                }
-                 fs.addFeature(new Feature<String>("Surrounding",Surround.toString()));
-               
-               
-                 try {
-                	 CosineSimilarity cs = new CosineSimilarity();
-                	 double confidence=0.0;
-                	 enoughAgents = true;
-                	 //System.out.print(Surround.toString());
-                	 String doc1=Surround.toString();
-                	 if(doc1.isEmpty())
-                	 doc1=input;
-                	 String doc2=dbAdapter.getDesc(eventId);
-                	 if(doc2.isEmpty())
-                	 {
-                		 
-                		 fs.addFeature(new Feature<Double>("confidence",confidence ));
-                		 
-                	 } 
-                	 else
-                	 {
-                	  confidence=cs.run(doc1,doc2);
-                	 fs.addFeature(new Feature<Double>("confidence",confidence ));
-                	 }
-                 } catch (IOException e) {
-                     // TODO Auto-generated catch block
-                     e.printStackTrace();
-                 }
-        
+                
+                
+                  String Surround = spotPhrases.getSurrounding(sentences,fs);
+                  fs.addFeature(new Feature<String>("Surrounding",Surround));
+                
+                
+                  try {
+                 	 CosineSimilarity csi = new CosineSimilarity();
+                 	 double confidence=0.0;
+                 	 enoughAgents = true;
+                 	 //System.out.print(Surround.toString());
+                 	 String doc1=Surround;
+                 	 if(doc1.isEmpty())
+                 	 doc1=input;
+                 	 String doc2=dbAdapter.getDesc(eventId);
+                 	 if(doc2.isEmpty())
+                 	 {
+                 		 
+                 		 fs.addFeature(new Feature<Double>("confidence",confidence ));
+                 		 
+                 	 } 
+                 	 else
+                 	 {
+                 	  confidence=csi.run(doc1,doc2);
+                 	 fs.addFeature(new Feature<Double>("confidence",confidence ));
+                 	 }
+                  } catch (IOException e) {
+                      // TODO Auto-generated catch block
+                      e.printStackTrace();
+                  }
+
              /*  int uSize = uniqueAgentToks.size();
                 int uUSize = uniqueUpperAgentToks.size();
                // logger.debug("agentTokenNum:" + agentTokenNum + " found unique AgentToks:" + uSize);

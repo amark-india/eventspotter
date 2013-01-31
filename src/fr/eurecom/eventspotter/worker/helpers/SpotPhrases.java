@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -156,4 +157,90 @@ public class SpotPhrases {
         //logger.debug("Spotter returning " + fsRes.size() + " hits");
         return fsRes;
     }
-}
+    
+    public String getSurrounding(List<FeatureStructure> sentences,FeatureStructure fs)
+    {
+
+        boolean enoughAgents = false;
+
+        String Prevline;
+        String Curline;
+        String Nextline;
+        int curpos=0;
+        StringBuffer Surround = new StringBuffer();
+         for(FeatureStructure sen: sentences)
+         { 
+        	 int sent_beg= sen.getFeature("begin").getValueAsInteger();
+        	 int event_beg= fs.getFeature("begin").getValueAsInteger();
+        	 int sent_end= sen.getFeature("end").getValueAsInteger();
+        	 if((sent_beg<event_beg)&&(event_beg<sent_end))
+        	 {
+        		curpos=sen.getFeature("number").getValueAsInteger();
+        		
+      
+             }
+         }
+         int last_sent=sentences.size();
+         for(FeatureStructure sen: sentences)
+         {
+        	
+        	 int sent_count=sen.getFeature("number").getValueAsInteger();
+        	 if(curpos!=1 && curpos!=last_sent)                	
+        	 {
+        		 if(sent_count== (curpos-1))
+        		 {
+        			 Prevline=sen.getCoveredText();
+        			 Surround.append(Prevline);
+        		 }
+        		 if(sent_count==curpos)
+        		 {
+        			 Curline=sen.getCoveredText();
+        			 Surround.append(Curline);
+        		 }
+        	 
+        		 if(sent_count==(curpos+1))
+        		 {
+        			 Nextline=sen.getCoveredText();
+        			 Surround.append(Nextline);
+        		 }
+        	 }
+        	 
+             if(curpos==1)
+             {
+            	 if(sent_count==curpos)
+            	 {
+            		 Curline=sen.getCoveredText();
+            		 Surround.append(Curline);
+            	 }
+            	 
+            	 if(sent_count==(curpos+1))
+            	 {
+            		 Nextline=sen.getCoveredText();
+            		 Surround.append(Nextline);
+            	 }
+            	 
+             }
+             if(curpos==last_sent)
+             {
+             	
+            		 if(sent_count== (curpos-1))
+                	 {
+                		 Prevline=sen.getCoveredText();
+                		 Surround.append(Prevline);
+                	 }
+                	 if(sent_count==curpos)
+                	 {
+                		 Curline=sen.getCoveredText();
+                		 Surround.append(Curline);
+                	 }
+             }
+
+        	
+        }
+         
+         return Surround.toString();
+    }
+    
+    
+    }
+
