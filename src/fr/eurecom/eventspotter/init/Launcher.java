@@ -3,19 +3,6 @@ package fr.eurecom.eventspotter.init;
 
 import java.io.IOException;
 
-
-
-
-
-
-/**
- * 
- */
-
-/**
- * 
- *
- */
 public class Launcher {
 
 	/**
