@@ -57,7 +57,7 @@ public class Main {
 
             if (line.hasOption("help") || !option) {
                 HelpFormatter formatter = new HelpFormatter();
-                formatter.printHelp( "eventspotter.jar --in <document_to_annotate> --out <annotated_document>", options );               
+                formatter.printHelp( "eventspotter.jar --in=<document_to_annotate> --out=<annotated_document>", options );               
             }
         }
         catch( ParseException exp ) {
