@@ -161,11 +161,11 @@ public class SpotPhrases {
     public String getSurrounding(List<FeatureStructure> sentences,FeatureStructure fs)
     {
 
-        boolean enoughAgents = false;
+       // boolean enoughAgents = false;
 
-        String Prevline;
-        String Curline;
-        String Nextline;
+        String Prevline=new String();
+        String Curline=new String();
+        String Nextline=new String();
         int curpos=0;
         StringBuffer Surround = new StringBuffer();
          for(FeatureStructure sen: sentences)
@@ -237,7 +237,7 @@ public class SpotPhrases {
 
         	
         }
-         
+         System.out.println("here:"+Surround.toString());
          return Surround.toString();
     }
     

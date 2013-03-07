@@ -118,7 +118,7 @@ public class DBAdapter {
             pstmt.setString(1,eventId);
             ResultSet rs = pstmt.executeQuery();
             List<String> ret = new ArrayList<String>();
-            System.out.println(eventId);
+           // System.out.println(eventId);
             while (rs.next()) {
                 return rs.getString("eventDiscription");
             }

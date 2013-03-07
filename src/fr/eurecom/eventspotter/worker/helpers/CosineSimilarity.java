@@ -42,7 +42,7 @@ public class CosineSimilarity {
         // index strings
     	s[0]=doc1;
     	s[1]=doc2;
-    	System.out.print(s[0]+"\n"+s[1]+"\n");
+    	//System.out.print(s[0]+"\n"+s[1]+"\n");
         Directory index = new RAMDirectory();
         StandardAnalyzer analyzer = new StandardAnalyzer(Version.LUCENE_36);
         IndexWriterConfig config = new IndexWriterConfig(Version.LUCENE_36, analyzer);
@@ -85,7 +85,7 @@ public class CosineSimilarity {
             //strip_str.replaceAll("null", "");
             
             docs[i] = new DocVector(terms); 
-            System.out.print(tfvs);
+            //System.out.print(tfvs);
         //}
             
            for (TermFreqVector tfv : tfvs) {

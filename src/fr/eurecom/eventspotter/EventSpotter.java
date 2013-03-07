@@ -15,7 +15,7 @@ public class EventSpotter
     private String titlesFilePath;
     private int maxTitleLength;
     // private Set<String> SUPPORTED_MIMETYPES = Collections.unmodifiableSet(new HashSet<String>(
-    //     Arrays.asList("text/plain")));
+    //     Arrays.asList("document/plain")));
     // public static final Integer defaultOrder = ServiceProperties.ORDERING_PRE_PROCESSING;
     private EventSpotterLight eventspotter;
     //  final Logger logger = (Logger) LoggerFactory.getLogger(this.getClass());
@@ -23,10 +23,12 @@ public class EventSpotter
     private String dbDriver;
     private String dbUser;
     private String dbPassword;
+   
 
 
     public void start_spotter(String document) throws IOException
     {
+    	StringBuilder new_document =new StringBuilder();
         this.titlesFilePath = "/opt/event-titles.list";
         this.dbPath = "jdbc:mysql://localhost/eventspotter";
         this.dbDriver = "com.mysql.jdbc.Driver";
@@ -50,19 +52,24 @@ public class EventSpotter
         } catch (IOException e) {
             e.printStackTrace();
         }
+        //String output=document;
 
         for (FeatureStructure fs : spottedevents) {
             //   logger.info("FOUND Event:" + fs.toString());
-
+        	
             System.out.println("FOUND Event:");
 
             String label= fs.getFeature("title").getValueAsString();
+            String new_label= label.replace(" ", "/EVENT ");
+            new_label=new_label+"/EVENT ";
+            document=document.replaceAll(label,new_label);
             String startChar = fs.getFeature("begin").getValueAsString();
             String endChar = fs.getFeature("end").getValueAsString();
             String type = fs.getFeature("type").getValueAsString();
             String uri = fs.getFeature("eventId").getValueAsString();
             String confidence =fs.getFeature("confidence").getValueAsString();
             String surrounding =fs.getFeature("Surrounding").getValueAsString();
+            //document.replaceAll("[^new_label]", "/0");
 
             System.out.println("{");
             System.out.println("label:"+label);
@@ -101,58 +108,32 @@ public class EventSpotter
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
-            /*` MGraph metadata = ci.getMetadata();
-            String uriRefStr = "eventspotter.sztaki.hu:eventOccurrence";
-
-            metadata.add(new TripleImpl(textAnnotation, DC_TYPE, new UriRef(uriRefStr)));
-
-            if (fs.getFeature("begin") != null) {
-                metadata.add(new TripleImpl(textAnnotation, ENHANCER_START,
-                        literalFactory.createTypedLiteral(fs.getFeature("begin").getValueAsInteger())));
-            }
-            if (fs.getFeature("end") != null) {
-                metadata.add(new TripleImpl(textAnnotation, ENHANCER_END,
-                        literalFactory.createTypedLiteral(fs.getFeature("end").getValueAsInteger())));
-            }
-            if (fs.getCoveredText() != null && !fs.getCoveredText().isEmpty()) {
-                metadata.add(new TripleImpl(textAnnotation, ENHANCER_SELECTED_TEXT, new PlainLiteralImpl(fs.getCoveredText())));
-            }
-
-            UriRef entityAnnotation = EnhancementEngineHelper.createEntityEnhancement(ci, this);
-
-            //type
-            metadata.add(new TripleImpl(entityAnnotation, ENHANCER_ENTITY_TYPE, new UriRef("http://dbpedia.org/ontology/event")));
-            metadata.add(new TripleImpl(entityAnnotation, ENHANCER_ENTITY_TYPE, new UriRef("http://purl.org/ontology/bibo/event")));
-            //label
-            String author = "";
-            if (fs.getFeature("author") != null) {
-                author = fs.getFeature("author").getValueAsString();
-            }
-            String title = "";
-            if (fs.getFeature("title") != null) {
-                title = fs.getFeature("title").getValueAsString();
-            }
-
-            if (fs.getFeature("confidence") != null) {
-                double confidence = (Double)fs.getFeature("confidence").getValue();
-                metadata.add(new TripleImpl(entityAnnotation, ENHANCER_CONFIDENCE, literalFactory.createTypedLiteral(confidence)));
-            }
-
-            metadata.add(new TripleImpl(entityAnnotation, ENHANCER_ENTITY_LABEL, new PlainLiteralImpl(author + " : " + title)));
-            //reference
-            if (fs.getFeature("workId") != null) {
-
-                String workId = fs.getFeature("workId").getValueAsString();
-                if (workId.startsWith("/works")) {
-                    workId = "http://openlibrary.org"+workId;
-                }
-                metadata.add(new TripleImpl(entityAnnotation, ENHANCER_ENTITY_REFERENCE, new UriRef(workId)));
-            }
-            //link to the mention
-
-           metadata.add(new TripleImpl(entityAnnotation, DC_RELATION, textAnnotation));
-             */
+           
         }
-    }
+        String [] tex=new String[20];
+        
+        tex=document.split("[\\s|,|.]");
+    	for(String s : tex)
+    	{
+    		if (s.contains("/EVENT"))
+    		{	
+    			s=s.replace("/","\t/");
+    			s=s+" \n";
+    			new_document=new_document.append(s);
+    			
+    			//System.out.println(new_document);
+    				continue;        		
+    		}
+    		else
+    		{
+    			s = s + "\t/O\n";
+    		new_document=new_document.append(s);
+    		
+    		}
+    		
+    	}
+    	document=new_document.toString();
+       System.out.println(document);
+        }
+    
 }
