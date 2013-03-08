@@ -18,9 +18,11 @@
  */
 package fr.eurecom.eventspotter.worker.helpers;
 
+import java.text.BreakIterator;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 import java.util.UUID;
 
 import fr.eurecom.eventspotter.caslight.Feature;
@@ -248,32 +250,24 @@ public class Tokenizer {
     }
     public static List<FeatureStructure> sentensize(String input) 
     {    	
+    //	int event_beg= fs.getFeature("begin").getValueAsInteger();
+    	//int event_end= fs.getFeature("end").getValueAsInteger();
     	List<FeatureStructure> ret = new ArrayList<FeatureStructure>();
-    	String [] sentence=input.split(".");
-    	int [] sent_end;
-    	int startpos=0;
-    	int endpos=0;
     	int i=0;
-    	sent_end = new int[sentence.length];
-    	
-    	for(String st : sentence)
-    	{
-    		if(i==0)
-    		{
-    			startpos=0;
-    			sent_end[i]= st.length();
-    			
-    		}
-    		else
-    		{
-    			startpos= sent_end[i-1]+2;
-    			sent_end[i]= sent_end[i-1]+st.length()+1;
-    			
-    		}
-    		endpos=sent_end[i]+1;
-    		createSentenceAnnotation(ret, st, sentenceType, startpos,endpos,i+1);
-    		i++;
-    	}
+    	BreakIterator iterator = BreakIterator.getSentenceInstance(Locale.US);
+        String source = input;
+        //String surround=new String();
+        iterator.setText(source);
+        int start = iterator.first();
+        for (int end = iterator.next();
+            end != BreakIterator.DONE;
+            start = end, end = iterator.next()) {
+        	
+         // System.out.println(source.substring(start,end));
+          createSentenceAnnotation(ret, source.substring(start,end), sentenceType,start,end,i+1);
+        	
+        	i++;
+        }
     	return ret;
     }
     

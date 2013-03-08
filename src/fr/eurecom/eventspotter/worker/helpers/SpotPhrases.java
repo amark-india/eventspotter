@@ -6,8 +6,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.text.BreakIterator;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.UUID;
 
@@ -160,87 +162,95 @@ public class SpotPhrases {
     
     public String getSurrounding(List<FeatureStructure> sentences,FeatureStructure fs)
     {
-
-       // boolean enoughAgents = false;
-
-        String Prevline=new String();
-        String Curline=new String();
-        String Nextline=new String();
-        int curpos=0;
-        StringBuffer Surround = new StringBuffer();
-         for(FeatureStructure sen: sentences)
-         { 
-        	 int sent_beg= sen.getFeature("begin").getValueAsInteger();
-        	 int event_beg= fs.getFeature("begin").getValueAsInteger();
-        	 int sent_end= sen.getFeature("end").getValueAsInteger();
-        	 if((sent_beg<event_beg)&&(event_beg<sent_end))
-        	 {
-        		curpos=sen.getFeature("number").getValueAsInteger();
-        		
-      
-             }
-         }
-         int last_sent=sentences.size();
-         for(FeatureStructure sen: sentences)
+     StringBuffer Surround = new StringBuffer();
+   	 int event_beg= fs.getFeature("begin").getValueAsInteger();
+   	 int event_end= fs.getFeature("end").getValueAsInteger();
+        
+      /* int low=0; 
+        int high =sentences.size()-1;
+        int mid=0;
+        boolean found= false;
+         while(low<=high)
          {
-        	
-        	 int sent_count=sen.getFeature("number").getValueAsInteger();
-        	 if(curpos!=1 && curpos!=last_sent)                	
-        	 {
-        		 if(sent_count== (curpos-1))
-        		 {
-        			 Prevline=sen.getCoveredText();
-        			 Surround.append(Prevline);
-        		 }
-        		 if(sent_count==curpos)
-        		 {
-        			 Curline=sen.getCoveredText();
-        			 Surround.append(Curline);
-        		 }
         	 
-        		 if(sent_count==(curpos+1))
-        		 {
-        			 Nextline=sen.getCoveredText();
-        			 Surround.append(Nextline);
-        		 }
+        	 mid=(low+high)/2;
+        	 int mid_pos=sentences.get(mid).getFeature("begin").getValueAsInteger();
+        	 int mid_end=sentences.get(mid).getFeature("end").getValueAsInteger();
+        	 
+        	 if(event_beg<mid_pos)
+        	 {
+        		 high=mid;
+        		 
+        	 }
+        	 if(mid_pos<=event_beg && event_end<=mid_end)
+        	 {
+        		found=true;
+        		 break;
         	 }
         	 
-             if(curpos==1)
-             {
-            	 if(sent_count==curpos)
-            	 {
-            		 Curline=sen.getCoveredText();
-            		 Surround.append(Curline);
-            	 }
-            	 
-            	 if(sent_count==(curpos+1))
-            	 {
-            		 Nextline=sen.getCoveredText();
-            		 Surround.append(Nextline);
-            	 }
-            	 
-             }
-             if(curpos==last_sent)
-             {
-             	
-            		 if(sent_count== (curpos-1))
-                	 {
-                		 Prevline=sen.getCoveredText();
-                		 Surround.append(Prevline);
-                	 }
-                	 if(sent_count==curpos)
-                	 {
-                		 Curline=sen.getCoveredText();
-                		 Surround.append(Curline);
-                	 }
-             }
+        	 if(event_beg>mid_end)
+        	 {
+        		 low=mid;
+        	 }
+         }
+         if(found)
+         {
+        	 if(mid>0 && mid<sentences.size()-1)
+        	 {
+        	 Surround.append(sentences.get(mid-1).getCoveredText());
+        	 Surround.append(sentences.get(mid).getCoveredText());
+        	 Surround.append(sentences.get(mid+1).getCoveredText());
+        	 }
+        	 if(mid==0)
+        	 {
+        		 Surround.append(sentences.get(mid).getCoveredText());
+            	 Surround.append(sentences.get(mid+1).getCoveredText());
+            	 Surround.append(sentences.get(mid+2).getCoveredText());
+        	 }
+        	 if(mid==sentences.size()-1)
+        	 {
+            	 Surround.append(sentences.get(mid-2).getCoveredText());
+            	 Surround.append(sentences.get(mid-1).getCoveredText());
+            	 Surround.append(sentences.get(mid).getCoveredText());
+        	 }
+         }
+   	 */
+   	 for(int i=0; i<sentences.size() ; i++)
+   	 {
+   		 System.out.println("checkoooooooo:"+i);
 
-        	
-        }
+   		int start_pos=sentences.get(i).getFeature("begin").getValueAsInteger();
+
+
+   	 int end_pos=sentences.get(i).getFeature("end").getValueAsInteger();
+		 System.out.println("start:"+start_pos+"end:"+end_pos);
+   	 if(start_pos<=event_beg && event_end<=end_pos)
+	 {
+   		 System.out.println("heeree:"+i);
+   	 	 if(i==0)
+    	 {
+    		 Surround.append(sentences.get(i).getCoveredText());
+        	 Surround.append(sentences.get(i+1).getCoveredText());
+        	 Surround.append(sentences.get(i+2).getCoveredText());
+    	 }
+        	 if(i>0 && i<sentences.size()-1)
+        	 {
+        	 Surround.append(sentences.get(i-1).getCoveredText());
+        	 Surround.append(sentences.get(i).getCoveredText());
+        	 Surround.append(sentences.get(i+1).getCoveredText());
+        	 }
+       
+        	 if(i==sentences.size()-1)
+        	 {
+        		 Surround.append(sentences.get(i-2).getCoveredText());
+        		 Surround.append(sentences.get(i-1).getCoveredText());
+            	 Surround.append(sentences.get(i).getCoveredText());
+        	 }
+         }
+   	 }
          System.out.println("here:"+Surround.toString());
          return Surround.toString();
+    
     }
-    
-    
     }
 

@@ -156,7 +156,7 @@ public class EventSpotterLight {
                     uniqueAgentToks.add(fsAT.getCoveredText());
                 }
                 
-                
+                	
                   String Surround = spotPhrases.getSurrounding(sentences,fs);
                   fs.addFeature(new Feature<String>("Surrounding",Surround));
                 
@@ -165,7 +165,7 @@ public class EventSpotterLight {
                  	 CosineSimilarity csi = new CosineSimilarity();
                  	 double confidence=0.0;
                  	 enoughAgents = true;
-                 	 System.out.print(Surround);
+                 	 //System.out.print(Surround);
                  	 String doc1=Surround;
                  	 if(doc1.isEmpty())
                  	 doc1=input;
