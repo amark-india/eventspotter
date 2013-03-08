@@ -217,7 +217,7 @@ public class SpotPhrases {
    	 */
    	 for(int i=0; i<sentences.size() ; i++)
    	 {
-   		 System.out.println("checkoooooooo:"+i);
+   		 //System.out.println("checkoooooooo:"+i);
 
    		int start_pos=sentences.get(i).getFeature("begin").getValueAsInteger();
 
@@ -226,7 +226,7 @@ public class SpotPhrases {
 		 System.out.println("start:"+start_pos+"end:"+end_pos);
    	 if(start_pos<=event_beg && event_end<=end_pos)
 	 {
-   		 System.out.println("heeree:"+i);
+   		 //System.out.println("heeree:"+i);
    	 	 if(i==0)
     	 {
     		 Surround.append(sentences.get(i).getCoveredText());
@@ -248,7 +248,7 @@ public class SpotPhrases {
         	 }
          }
    	 }
-         System.out.println("here:"+Surround.toString());
+         //System.out.println("here:"+Surround.toString());
          return Surround.toString();
     
     }

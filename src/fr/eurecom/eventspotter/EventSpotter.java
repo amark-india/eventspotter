@@ -26,7 +26,7 @@ public class EventSpotter
    
 
 
-    public void start_spotter(String document) throws IOException
+    public String[] start_spotter(String document) throws IOException
     {
     	StringBuilder new_document =new StringBuilder();
         this.titlesFilePath = "/opt/event-titles.list";
@@ -41,7 +41,8 @@ public class EventSpotter
         //logger.info("Running eventSpotter...");
         List<FeatureStructure> spottedevents = eventspotter.spotevents(document);
         //logger.info("Processing spotted events(" + spottedevents.size() + ")");
-        File file = new File("/home/amark/project/output.txt");
+        File file = new File("output.txt");
+        File eval_file = new File("validate.txt");
         try{
             // if file doesnt exist, then create it
             if (!file.exists()) {
@@ -61,7 +62,7 @@ public class EventSpotter
 
             String label= fs.getFeature("title").getValueAsString();
             String new_label= label.replace(" ", "/EVENT ");
-            new_label=new_label+"/EVENT ";
+            new_label=new_label+"/EVENT";
             document=document.replaceAll(label,new_label);
             String startChar = fs.getFeature("begin").getValueAsString();
             String endChar = fs.getFeature("end").getValueAsString();
@@ -113,27 +114,9 @@ public class EventSpotter
         String [] tex=new String[20];
         
         tex=document.split("[\\s|,|.]");
-    	for(String s : tex)
-    	{
-    		if (s.contains("/EVENT"))
-    		{	
-    			s=s.replace("/","\t/");
-    			s=s+" \n";
-    			new_document=new_document.append(s);
-    			
-    			//System.out.println(new_document);
-    				continue;        		
-    		}
-    		else
-    		{
-    			s = s + "\t/O\n";
-    		new_document=new_document.append(s);
-    		
-    		}
-    		
-    	}
-    	document=new_document.toString();
-       System.out.println(document);
-        }
+
+      System.out.println(document);
+    	return tex;
+    }
     
 }
