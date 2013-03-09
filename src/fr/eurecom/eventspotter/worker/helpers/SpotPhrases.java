@@ -223,7 +223,7 @@ public class SpotPhrases {
 
 
    	 int end_pos=sentences.get(i).getFeature("end").getValueAsInteger();
-		 System.out.println("start:"+start_pos+"end:"+end_pos);
+		 //System.out.println("start:"+start_pos+"end:"+end_pos);
    	 if(start_pos<=event_beg && event_end<=end_pos)
 	 {
    		 //System.out.println("heeree:"+i);

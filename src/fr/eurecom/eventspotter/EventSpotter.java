@@ -6,6 +6,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
+import org.apache.commons.io.FileUtils;
+
 import fr.eurecom.eventspotter.caslight.FeatureStructure;
 import fr.eurecom.eventspotter.worker.EventSpotterLight;
 
@@ -45,10 +47,10 @@ public class EventSpotter
         File eval_file = new File("validate.txt");
         try{
             // if file doesnt exist, then create it
-            if (!file.exists()) {
-                file.createNewFile();
+        	if (file.exists()) {
+        		file.delete();
             }
-
+        	file.createNewFile();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -58,7 +60,7 @@ public class EventSpotter
         for (FeatureStructure fs : spottedevents) {
             //   logger.info("FOUND Event:" + fs.toString());
         	
-            System.out.println("FOUND Event:");
+           
 
             String label= fs.getFeature("title").getValueAsString();
             String new_label= label.replace(" ", "/EVENT ");
@@ -72,7 +74,7 @@ public class EventSpotter
             String surrounding =fs.getFeature("Surrounding").getValueAsString();
             //document.replaceAll("[^new_label]", "/0");
 
-            System.out.println("{");
+ /*           System.out.println("{");
             System.out.println("label:"+label);
             System.out.println("startChar:"+startChar);
             System.out.println("endChar:"+endChar);
@@ -82,7 +84,7 @@ public class EventSpotter
             System.out.println("Surrounding:"+surrounding);
 
             System.out.println("},");
-
+*/
             try{
                 FileWriter fw = new FileWriter(file.getAbsoluteFile(),true);
                 BufferedWriter bw = new BufferedWriter(fw);
@@ -115,7 +117,11 @@ public class EventSpotter
         
         tex=document.split("[\\s|,|.]");
 
-      System.out.println(document);
+      System.out.println("\n"+document);
+      String output = FileUtils.readFileToString(file);
+      System.out.println("FOUND Events:");
+      System.out.println(output);
+
     	return tex;
     }
     
