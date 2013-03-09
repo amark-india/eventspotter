@@ -56,13 +56,13 @@ public class EventSpotterLight {
      * @param input - The input text as string
      * @return a list of event title matches in CasLight FeatureStructure
      */
-    public List<FeatureStructure> spotevents(String input) {
+    public Set<FeatureStructure> spotevents(String input) {
         //logger.info("Running eventspotterlight...");
         List<FeatureStructure> tokens = Tokenizer.tokenize(input, false);
         List<FeatureStructure> sentences = Tokenizer.sentensize(input);
-        List<FeatureStructure> ret = new ArrayList<FeatureStructure>();
+        Set<FeatureStructure> ret = new HashSet<FeatureStructure>();
         
-        List<FeatureStructure> candidates = spotPhrases.doSpotting(input, tokens, spotPhrases.entries);
+        Set<FeatureStructure> candidates = spotPhrases.doSpotting(input, tokens, spotPhrases.entries);
         for (FeatureStructure fs : candidates) {
             boolean add = false;
             String origSofaChunk = fs.getSofaChunk(input);
@@ -141,7 +141,7 @@ public class EventSpotterLight {
             }
 
             if (agentTokenNum > 0) {
-                List<FeatureStructure> foundAgentToks = spotPhrases.doSpotting(input, tokens, entries);
+                Set<FeatureStructure> foundAgentToks = spotPhrases.doSpotting(input, tokens, entries);
 
                 boolean enoughAgents = false;
 

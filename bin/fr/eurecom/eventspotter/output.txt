@@ -1,0 +1,144 @@
+{
+label:"Hello Mexico"
+startChar:1444
+endChar:1456
+type:"Musical Concert"
+uri:"http://data.linkedevents.org/event/27839f86-e1e6-4948-bfeb-51b06342ea88"
+confidence:0.9050301610730958
+surrounding:Presentaci√≥n del nuevo disco de Anathema Weather Systems. <br>ANATHEMA <br>+ Astra <br>Sala Joy Eslava (Madrid) <br>Precio: 25‚Ç¨ (Taquilla 30‚Ç¨) <br>Venta de Entradas: Sun Records, Fnac, Carrefour, puntos de la red Ticketmaster.es y en el tel√©fono 902 150 025 
+THE MACBETH AND XHOUSEX PROUDLY PRESENTS: <br><a href=\"\"http://www.last.fm/music/Hello+Mexico\"\" class=\"\"bbcode_artist\"\">Hello Mexico</a> <br><a href=\"\"http://www.last.fm/music/Josh+Beech+and+The+Johns\"\" class=\"\"bbcode_artist\"\">Josh Beech and The Johns</a> <br><a href=\"\"http://www.last.fm/music/Yearbook\"\" class=\"\"bbcode_artist\"\">Yearbook</a> <br>@ The Macbeth, Hoxton Street <br>20:00 - 01:00 Entry - ¬£3 <br>------------------------------------------------------------------------- <br>HELLO MEXICO <br><a href=\"\"http://www.hellomexico.co.uk/\"\" rel=\"\"nofollow\"\"> http://www.hellomexico.co.uk/</a> <br><a href=\"\"http://soundcloud.com/hello-mexico\"\" rel=\"\"nofollow\"\"> http://soundcloud.com/hello-mexico</a> <br>Hello Mexico are a quintet progressive rock band hailing from London. After numerous line up changes and two previous EP releases, the band have seemingly finally hit on a perfect formula with their latest release, Five Twenty Seven. 
+},
+{
+label:"EL-P"
+startChar:2933
+endChar:2937
+type:"Performing Arts"
+uri:"http://data.linkedevents.org/event/67df9916-0c4d-4dce-9255-9536bade2ddf"
+confidence:0.5264798497798947
+surrounding:<br>JOSH BEECH AND THE JOHNS <br><a href=\"\"http://www.joshbeechmusic.com/\"\" rel=\"\"nofollow\"\"> http://www.joshbeechmusic.com/</a> <br><a href=\"\"http://soundcloud.com/joshbeechmusic\"\" rel=\"\"nofollow\"\"> http://soundcloud.com/joshbeechmusic</a> <br>Josh Beech and the Johns are currently finishing recording their debut album: \"\"Letters written in the sky\" "Hello Mexico
+ATP are very proud to announce that EL-P will be returning to the UK in September to perform at the Scala. This will be in support of his excellent new album 'Cancer For Cure' which dropped in May this year. <br>ARTIST: EL-P <br>SUPPORT: Despot <br>VENUE: Scala, London, UK <br>DATE: Wednesday 12th September <br>ADVANCED TICKET PRICE: ¬£14 stbf <br>VENUE ADDRESS: 275-277 Pentonville Road, King's Cross, London, N1 9NL <br>VENUE TELEPHONE: +44 207 833 2022 <br>AGE RESTRICTIONS: Over 18s <br>DOORS OPEN: 7:30pm <br>CURFEW: 11pm 
+
+},
+{
+label:"Arch Enemy"
+startChar:30
+endChar:40
+type:"Musical Concert"
+uri:"http://data.linkedevents.org/event/264f645e-2931-482e-9912-81230db6b149"
+confidence:0.3024642905207203
+surrounding:- World Khaos Tour 2012 - <br>ARCH ENEMY <br>+ VOIVOD <br>+ TITANS EVE <br>Sala La Riviera (Madrid) <br>Precio: 26‚Ç¨ (Taquilla 30‚Ç¨) <br>Venta de Entradas: Sun Records, Fnac, Carrefour, puntos de la red Ticketmaster.es y en el tel√©fono 902 150 025 
+The Experimental Tropic Blues Band is een band die zichzelf als doel heeft gesteld om in de voetsporen te treden van de grote namen van de rock 'n roll: Johnny Cash, the Cramps, Elvis, Bo Diddley. Hoewel ze niet uit een zeer opwindend land komen (Belgie) staan ze er wel om bekend om er live een enorm spektakel van te maken. Na tien jaar lang optreden en meer dan 400 shows in Europa en de US, en na het uitbrengen van 1 e.p. en 2 l.p.'
+},
+{
+label:"Anathema"
+startChar:1084
+endChar:1092
+type:"Musical Concert"
+uri:"http://data.linkedevents.org/event/2724e543-1eba-4933-9fdd-bea0fd6daf6e"
+confidence:0.395612026788424
+surrounding:Vanavond komen zij in EKKO hun nieuwe ep 'Stepping in Line' presenteren. 
+Presentaci√≥n del nuevo disco de Anathema Weather Systems. <br>ANATHEMA <br>+ Astra <br>Sala Joy Eslava (Madrid) <br>Precio: 25‚Ç¨ (Taquilla 30‚Ç¨) <br>Venta de Entradas: Sun Records, Fnac, Carrefour, puntos de la red Ticketmaster.es y en el tel√©fono 902 150 025 
+THE MACBETH AND XHOUSEX PROUDLY PRESENTS: <br><a href=\"\"http://www.last.fm/music/Hello+Mexico\"\" class=\"\"bbcode_artist\"\">Hello Mexico</a> <br><a href=\"\"http://www.last.fm/music/Josh+Beech+and+The+Johns\"\" class=\"\"bbcode_artist\"\">Josh Beech and The Johns</a> <br><a href=\"\"http://www.last.fm/music/Yearbook\"\" class=\"\"bbcode_artist\"\">Yearbook</a> <br>@ The Macbeth, Hoxton Street <br>20:00 - 01:00 Entry - ¬£3 <br>------------------------------------------------------------------------- <br>HELLO MEXICO <br><a href=\"\"http://www.hellomexico.co.uk/\"\" rel=\"\"nofollow\"\"> http://www.hellomexico.co.uk/</a> <br><a href=\"\"http://soundcloud.com/hello-mexico\"\" rel=\"\"nofollow\"\"> http://soundcloud.com/hello-mexico</a> <br>Hello Mexico are a quintet progressive rock band hailing from London. 
+},
+{
+label:"Anathema"
+startChar:1114
+endChar:1122
+type:"Musical Concert"
+uri:"http://data.linkedevents.org/event/2724e543-1eba-4933-9fdd-bea0fd6daf6e"
+confidence:0.3907577076494574
+surrounding:Presentaci√≥n del nuevo disco de Anathema Weather Systems. <br>ANATHEMA <br>+ Astra <br>Sala Joy Eslava (Madrid) <br>Precio: 25‚Ç¨ (Taquilla 30‚Ç¨) <br>Venta de Entradas: Sun Records, Fnac, Carrefour, puntos de la red Ticketmaster.es y en el tel√©fono 902 150 025 
+THE MACBETH AND XHOUSEX PROUDLY PRESENTS: <br><a href=\"\"http://www.last.fm/music/Hello+Mexico\"\" class=\"\"bbcode_artist\"\">Hello Mexico</a> <br><a href=\"\"http://www.last.fm/music/Josh+Beech+and+The+Johns\"\" class=\"\"bbcode_artist\"\">Josh Beech and The Johns</a> <br><a href=\"\"http://www.last.fm/music/Yearbook\"\" class=\"\"bbcode_artist\"\">Yearbook</a> <br>@ The Macbeth, Hoxton Street <br>20:00 - 01:00 Entry - ¬£3 <br>------------------------------------------------------------------------- <br>HELLO MEXICO <br><a href=\"\"http://www.hellomexico.co.uk/\"\" rel=\"\"nofollow\"\"> http://www.hellomexico.co.uk/</a> <br><a href=\"\"http://soundcloud.com/hello-mexico\"\" rel=\"\"nofollow\"\"> http://soundcloud.com/hello-mexico</a> <br>Hello Mexico are a quintet progressive rock band hailing from London. After numerous line up changes and two previous EP releases, the band have seemingly finally hit on a perfect formula with their latest release, Five Twenty Seven. 
+},
+{
+label:"DESPOT"
+startChar:2951
+endChar:2957
+type:"Musical Concert"
+uri:"http://data.linkedevents.org/event/e3c273aa-bb62-4e89-925e-980d9941380b"
+confidence:0.5150346356542448
+surrounding:<br>JOSH BEECH AND THE JOHNS <br><a href=\"\"http://www.joshbeechmusic.com/\"\" rel=\"\"nofollow\"\"> http://www.joshbeechmusic.com/</a> <br><a href=\"\"http://soundcloud.com/joshbeechmusic\"\" rel=\"\"nofollow\"\"> http://soundcloud.com/joshbeechmusic</a> <br>Josh Beech and the Johns are currently finishing recording their debut album: \"\"Letters written in the sky\" "Hello Mexico
+ATP are very proud to announce that EL-P will be returning to the UK in September to perform at the Scala. This will be in support of his excellent new album 'Cancer For Cure' which dropped in May this year. <br>ARTIST: EL-P <br>SUPPORT: Despot <br>VENUE: Scala, London, UK <br>DATE: Wednesday 12th September <br>ADVANCED TICKET PRICE: ¬£14 stbf <br>VENUE ADDRESS: 275-277 Pentonville Road, King's Cross, London, N1 9NL <br>VENUE TELEPHONE: +44 207 833 2022 <br>AGE RESTRICTIONS: Over 18s <br>DOORS OPEN: 7:30pm <br>CURFEW: 11pm 
+
+},
+{
+label:"Voivod"
+startChar:47
+endChar:53
+type:"Musical Concert"
+uri:"http://data.linkedevents.org/event/d3bd8f25-eea6-4cde-a034-95eb254d8ae6"
+confidence:0.0
+surrounding:- World Khaos Tour 2012 - <br>ARCH ENEMY <br>+ VOIVOD <br>+ TITANS EVE <br>Sala La Riviera (Madrid) <br>Precio: 26‚Ç¨ (Taquilla 30‚Ç¨) <br>Venta de Entradas: Sun Records, Fnac, Carrefour, puntos de la red Ticketmaster.es y en el tel√©fono 902 150 025 
+The Experimental Tropic Blues Band is een band die zichzelf als doel heeft gesteld om in de voetsporen te treden van de grote namen van de rock 'n roll: Johnny Cash, the Cramps, Elvis, Bo Diddley. Hoewel ze niet uit een zeer opwindend land komen (Belgie) staan ze er wel om bekend om er live een enorm spektakel van te maken. Na tien jaar lang optreden en meer dan 400 shows in Europa en de US, en na het uitbrengen van 1 e.p. en 2 l.p.'
+},
+{
+label:"Hello Mexico"
+startChar:1828
+endChar:1840
+type:"Musical Concert"
+uri:"http://data.linkedevents.org/event/27839f86-e1e6-4948-bfeb-51b06342ea88"
+confidence:0.9050301610730958
+surrounding:Presentaci√≥n del nuevo disco de Anathema Weather Systems. <br>ANATHEMA <br>+ Astra <br>Sala Joy Eslava (Madrid) <br>Precio: 25‚Ç¨ (Taquilla 30‚Ç¨) <br>Venta de Entradas: Sun Records, Fnac, Carrefour, puntos de la red Ticketmaster.es y en el tel√©fono 902 150 025 
+THE MACBETH AND XHOUSEX PROUDLY PRESENTS: <br><a href=\"\"http://www.last.fm/music/Hello+Mexico\"\" class=\"\"bbcode_artist\"\">Hello Mexico</a> <br><a href=\"\"http://www.last.fm/music/Josh+Beech+and+The+Johns\"\" class=\"\"bbcode_artist\"\">Josh Beech and The Johns</a> <br><a href=\"\"http://www.last.fm/music/Yearbook\"\" class=\"\"bbcode_artist\"\">Yearbook</a> <br>@ The Macbeth, Hoxton Street <br>20:00 - 01:00 Entry - ¬£3 <br>------------------------------------------------------------------------- <br>HELLO MEXICO <br><a href=\"\"http://www.hellomexico.co.uk/\"\" rel=\"\"nofollow\"\"> http://www.hellomexico.co.uk/</a> <br><a href=\"\"http://soundcloud.com/hello-mexico\"\" rel=\"\"nofollow\"\"> http://soundcloud.com/hello-mexico</a> <br>Hello Mexico are a quintet progressive rock band hailing from London. After numerous line up changes and two previous EP releases, the band have seemingly finally hit on a perfect formula with their latest release, Five Twenty Seven. 
+},
+{
+label:"Scala"
+startChar:2813
+endChar:2818
+type:"Musical Concert"
+uri:"http://data.linkedevents.org/event/0e383509-f034-42c3-afad-a0cad5f343fe"
+confidence:0.0
+surrounding:Not one to miss for 2012. <br>JOSH BEECH AND THE JOHNS <br><a href=\"\"http://www.joshbeechmusic.com/\"\" rel=\"\"nofollow\"\"> http://www.joshbeechmusic.com/</a> <br><a href=\"\"http://soundcloud.com/joshbeechmusic\"\" rel=\"\"nofollow\"\"> http://soundcloud.com/joshbeechmusic</a> <br>Josh Beech and the Johns are currently finishing recording their debut album: \"\"Letters written in the sky\" "Hello Mexico
+ATP are very proud to announce that EL-P will be returning to the UK in September to perform at the Scala. This will be in support of his excellent new album 'Cancer For Cure' which dropped in May this year. 
+},
+{
+label:"Hello Mexico"
+startChar:2700
+endChar:2712
+type:"Musical Concert"
+uri:"http://data.linkedevents.org/event/27839f86-e1e6-4948-bfeb-51b06342ea88"
+confidence:0.7477872665426102
+surrounding:Not one to miss for 2012. <br>JOSH BEECH AND THE JOHNS <br><a href=\"\"http://www.joshbeechmusic.com/\"\" rel=\"\"nofollow\"\"> http://www.joshbeechmusic.com/</a> <br><a href=\"\"http://soundcloud.com/joshbeechmusic\"\" rel=\"\"nofollow\"\"> http://soundcloud.com/joshbeechmusic</a> <br>Josh Beech and the Johns are currently finishing recording their debut album: \"\"Letters written in the sky\" "Hello Mexico
+ATP are very proud to announce that EL-P will be returning to the UK in September to perform at the Scala. This will be in support of his excellent new album 'Cancer For Cure' which dropped in May this year. 
+},
+{
+label:"THE EXPERIMENTAL TROPIC BLUES BAND"
+startChar:252
+endChar:286
+type:"Musical Concert"
+uri:"http://data.linkedevents.org/event/4daca0d6-b988-45ed-b6d1-d5238998664b"
+confidence:0.0
+surrounding:- World Khaos Tour 2012 - <br>ARCH ENEMY <br>+ VOIVOD <br>+ TITANS EVE <br>Sala La Riviera (Madrid) <br>Precio: 26‚Ç¨ (Taquilla 30‚Ç¨) <br>Venta de Entradas: Sun Records, Fnac, Carrefour, puntos de la red Ticketmaster.es y en el tel√©fono 902 150 025 
+The Experimental Tropic Blues Band is een band die zichzelf als doel heeft gesteld om in de voetsporen te treden van de grote namen van de rock 'n roll: Johnny Cash, the Cramps, Elvis, Bo Diddley. Hoewel ze niet uit een zeer opwindend land komen (Belgie) staan ze er wel om bekend om er live een enorm spektakel van te maken. Na tien jaar lang optreden en meer dan 400 shows in Europa en de US, en na het uitbrengen van 1 e.p. en 2 l.p.'
+},
+{
+label:"Hello Mexico"
+startChar:2067
+endChar:2079
+type:"Musical Concert"
+uri:"http://data.linkedevents.org/event/27839f86-e1e6-4948-bfeb-51b06342ea88"
+confidence:0.9050301610730958
+surrounding:Presentaci√≥n del nuevo disco de Anathema Weather Systems. <br>ANATHEMA <br>+ Astra <br>Sala Joy Eslava (Madrid) <br>Precio: 25‚Ç¨ (Taquilla 30‚Ç¨) <br>Venta de Entradas: Sun Records, Fnac, Carrefour, puntos de la red Ticketmaster.es y en el tel√©fono 902 150 025 
+THE MACBETH AND XHOUSEX PROUDLY PRESENTS: <br><a href=\"\"http://www.last.fm/music/Hello+Mexico\"\" class=\"\"bbcode_artist\"\">Hello Mexico</a> <br><a href=\"\"http://www.last.fm/music/Josh+Beech+and+The+Johns\"\" class=\"\"bbcode_artist\"\">Josh Beech and The Johns</a> <br><a href=\"\"http://www.last.fm/music/Yearbook\"\" class=\"\"bbcode_artist\"\">Yearbook</a> <br>@ The Macbeth, Hoxton Street <br>20:00 - 01:00 Entry - ¬£3 <br>------------------------------------------------------------------------- <br>HELLO MEXICO <br><a href=\"\"http://www.hellomexico.co.uk/\"\" rel=\"\"nofollow\"\"> http://www.hellomexico.co.uk/</a> <br><a href=\"\"http://soundcloud.com/hello-mexico\"\" rel=\"\"nofollow\"\"> http://soundcloud.com/hello-mexico</a> <br>Hello Mexico are a quintet progressive rock band hailing from London. After numerous line up changes and two previous EP releases, the band have seemingly finally hit on a perfect formula with their latest release, Five Twenty Seven. 
+},
+{
+label:"Scala"
+startChar:2969
+endChar:2974
+type:"Musical Concert"
+uri:"http://data.linkedevents.org/event/0e383509-f034-42c3-afad-a0cad5f343fe"
+confidence:0.0
+surrounding:<br>JOSH BEECH AND THE JOHNS <br><a href=\"\"http://www.joshbeechmusic.com/\"\" rel=\"\"nofollow\"\"> http://www.joshbeechmusic.com/</a> <br><a href=\"\"http://soundcloud.com/joshbeechmusic\"\" rel=\"\"nofollow\"\"> http://soundcloud.com/joshbeechmusic</a> <br>Josh Beech and the Johns are currently finishing recording their debut album: \"\"Letters written in the sky\" "Hello Mexico
+ATP are very proud to announce that EL-P will be returning to the UK in September to perform at the Scala. This will be in support of his excellent new album 'Cancer For Cure' which dropped in May this year. <br>ARTIST: EL-P <br>SUPPORT: Despot <br>VENUE: Scala, London, UK <br>DATE: Wednesday 12th September <br>ADVANCED TICKET PRICE: ¬£14 stbf <br>VENUE ADDRESS: 275-277 Pentonville Road, King's Cross, London, N1 9NL <br>VENUE TELEPHONE: +44 207 833 2022 <br>AGE RESTRICTIONS: Over 18s <br>DOORS OPEN: 7:30pm <br>CURFEW: 11pm 
+
+},
+{
+label:"EL-P"
+startChar:2749
+endChar:2753
+type:"Performing Arts"
+uri:"http://data.linkedevents.org/event/67df9916-0c4d-4dce-9255-9536bade2ddf"
+confidence:0.3120938919661795
+surrounding:Not one to miss for 2012. <br>JOSH BEECH AND THE JOHNS <br><a href=\"\"http://www.joshbeechmusic.com/\"\" rel=\"\"nofollow\"\"> http://www.joshbeechmusic.com/</a> <br><a href=\"\"http://soundcloud.com/joshbeechmusic\"\" rel=\"\"nofollow\"\"> http://soundcloud.com/joshbeechmusic</a> <br>Josh Beech and the Johns are currently finishing recording their debut album: \"\"Letters written in the sky\" "Hello Mexico
+ATP are very proud to announce that EL-P will be returning to the UK in September to perform at the Scala. This will be in support of his excellent new album 'Cancer For Cure' which dropped in May this year. 
+},

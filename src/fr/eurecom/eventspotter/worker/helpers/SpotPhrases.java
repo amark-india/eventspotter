@@ -9,8 +9,10 @@ import java.io.InputStreamReader;
 import java.text.BreakIterator;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 import fr.eurecom.eventspotter.caslight.Feature;
@@ -146,8 +148,8 @@ public class SpotPhrases {
      * @return the list of found occurrences.
      */
     
-    public List<FeatureStructure> doSpotting(String input, List<FeatureStructure> tokens, HashMap<String, String> entries) {
-        List<FeatureStructure> fsRes = new ArrayList<FeatureStructure>();
+    public Set<FeatureStructure> doSpotting(String input, List<FeatureStructure> tokens, HashMap<String, String> entries) {
+        Set<FeatureStructure> fsRes = new HashSet<FeatureStructure>();
 
        //logger.info("Looking for phrases on the " + tokens.size() + " tokens of the text");
         for (int i = 0; i < tokens.size(); i++) {

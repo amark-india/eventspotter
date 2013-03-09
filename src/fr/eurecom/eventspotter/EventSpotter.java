@@ -1,13 +1,17 @@
 package fr.eurecom.eventspotter;
 
 import java.io.BufferedWriter;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
-
+import org.apache.commons.collections.list.SetUniqueList;
 import fr.eurecom.eventspotter.caslight.FeatureStructure;
 import fr.eurecom.eventspotter.worker.EventSpotterLight;
 
@@ -41,7 +45,7 @@ public class EventSpotter
         //logger.info("EventSpotter initiated with titles file:" + titlesFilePath);
 
         //logger.info("Running eventSpotter...");
-        List<FeatureStructure> spottedevents = eventspotter.spotevents(document);
+        Set<FeatureStructure> spottedevents = eventspotter.spotevents(document);
         //logger.info("Processing spotted events(" + spottedevents.size() + ")");
         File file = new File("output.txt");
         File eval_file = new File("validate.txt");
@@ -56,18 +60,26 @@ public class EventSpotter
             e.printStackTrace();
         }
         //String output=document;
-
-        for (FeatureStructure fs : spottedevents) {
+        Set<FeatureStructure> s = new HashSet<FeatureStructure>(spottedevents);
+        for (FeatureStructure fs : s) 
+        {
             //   logger.info("FOUND Event:" + fs.toString());
         	
-           
-
+            
+        	
             String label= fs.getFeature("title").getValueAsString();
             String new_label= label.replace(" ", "/EVENT ");
             new_label=new_label+"/EVENT";
-            document=document.replaceAll(label,new_label);
-            String startChar = fs.getFeature("begin").getValueAsString();
-            String endChar = fs.getFeature("end").getValueAsString();
+            if(!document.contains(new_label))
+            	document=document.replaceAll(label,new_label);
+            document=document.replaceAll("/EVENT ","/EVENT");
+            document=document.replaceAll("/EVENT","/EVENT ");
+            
+            int startChar = fs.getFeature("begin").getValueAsInteger();
+            int endChar = fs.getFeature("end").getValueAsInteger();
+            
+            String replaceevent = document.substring(startChar, endChar);
+            
             String type = fs.getFeature("type").getValueAsString();
             String uri = fs.getFeature("eventId").getValueAsString();
             String confidence =fs.getFeature("confidence").getValueAsString();
