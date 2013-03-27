@@ -20,38 +20,38 @@ The Experimental Tropic Blues Band is een band die zichzelf als doel heeft geste
 },
 {
 label:"Hello Mexico"
-startChar:1444
-endChar:1456
+startChar:1436
+endChar:1448
 type:"Musical Concert"
 uri:"http://data.linkedevents.org/event/27839f86-e1e6-4948-bfeb-51b06342ea88"
-confidence:0.9024554755255748
-surrounding:Presentaci√≥n del nuevo disco de Anathema Weather Systems. <br>ANATHEMA <br>+ Astra <br>Sala Joy Eslava (Madrid) <br>Precio: 25‚Ç¨ (Taquilla 30‚Ç¨) <br>Venta de Entradas: Sun Records, Fnac, Carrefour, puntos de la red Ticketmaster.es y en el tel√©fono 902 150 025 
+confidence:0.9075879651119481
+surrounding:Presentación del nuevo disco de Anathema Weather Systems. <br>ANATHEMA <br>+ Astra<br>Sala Joy Eslava (Madrid) <br>Precio: 25€ (Taquilla 30€) <br>Venta de Entradas: Sun Records, Fnac, Carrefour, puntos de la red Ticketmaster.es y en el teléfono 902 150 025
 THE MACBETH AND XHOUSEX PROUDLY PRESENTS: <br><a href=\"\"http://www.last.fm/music/Hello+Mexico\"\" class=\"\"bbcode_artist\"\">Hello Mexico </a> <br><a href=\"\"http://www.last.fm/music/Josh+Beech+and+The+Johns\"\" class=\"\"bbcode_artist\"\">Josh Beech and The Johns</a> <br><a href=\"\"http://www.last.fm/music/Yearbook\"\" class=\"\"bbcode_artist\"\">Yearbook</a> <br>@ The Macbeth, Hoxton Street <br>20:00 - 01:00 Entry - £3 <br>------------------------------------------------------------------------- <br>HELLO MEXICO <br><a href=\"\"http://www.hellomexico.co.uk/\"\" rel=\"\"nofollow\"\"> http://www.hellomexico.co.uk/</a> <br><a href=\"\"http://soundcloud.com/hello-mexico\"\" rel=\"\"nofollow\"\"> http://soundcloud.com/hello-mexico</a> <br>Hello Mexico are a quintet progressive rock band hailing from London. After numerous lineup changes and two previous EP releases, the band have seemingly finally hit on a perfect formula with their latest release, Five Twenty Seven. 
 },
 {
 label:"Hello Mexico"
-startChar:1828
-endChar:1840
+startChar:1820
+endChar:1832
 type:"Musical Concert"
 uri:"http://data.linkedevents.org/event/27839f86-e1e6-4948-bfeb-51b06342ea88"
-confidence:0.9024554755255748
-surrounding:Presentaci√≥n del nuevo disco de Anathema Weather Systems. <br>ANATHEMA <br>+ Astra <br>Sala Joy Eslava (Madrid) <br>Precio: 25‚Ç¨ (Taquilla 30‚Ç¨) <br>Venta de Entradas: Sun Records, Fnac, Carrefour, puntos de la red Ticketmaster.es y en el tel√©fono 902 150 025 
+confidence:0.9075879651119481
+surrounding:Presentación del nuevo disco de Anathema Weather Systems. <br>ANATHEMA <br>+ Astra<br>Sala Joy Eslava (Madrid) <br>Precio: 25€ (Taquilla 30€) <br>Venta de Entradas: Sun Records, Fnac, Carrefour, puntos de la red Ticketmaster.es y en el teléfono 902 150 025
 THE MACBETH AND XHOUSEX PROUDLY PRESENTS: <br><a href=\"\"http://www.last.fm/music/Hello+Mexico\"\" class=\"\"bbcode_artist\"\">Hello Mexico </a> <br><a href=\"\"http://www.last.fm/music/Josh+Beech+and+The+Johns\"\" class=\"\"bbcode_artist\"\">Josh Beech and The Johns</a> <br><a href=\"\"http://www.last.fm/music/Yearbook\"\" class=\"\"bbcode_artist\"\">Yearbook</a> <br>@ The Macbeth, Hoxton Street <br>20:00 - 01:00 Entry - £3 <br>------------------------------------------------------------------------- <br>HELLO MEXICO <br><a href=\"\"http://www.hellomexico.co.uk/\"\" rel=\"\"nofollow\"\"> http://www.hellomexico.co.uk/</a> <br><a href=\"\"http://soundcloud.com/hello-mexico\"\" rel=\"\"nofollow\"\"> http://soundcloud.com/hello-mexico</a> <br>Hello Mexico are a quintet progressive rock band hailing from London. After numerous lineup changes and two previous EP releases, the band have seemingly finally hit on a perfect formula with their latest release, Five Twenty Seven. 
 },
 {
 label:"Anathema"
-startChar:1114
-endChar:1122
+startChar:1113
+endChar:1121
 type:"Musical Concert"
 uri:"http://data.linkedevents.org/event/2724e543-1eba-4933-9fdd-bea0fd6daf6e"
-confidence:0.3911247887145759
-surrounding:Presentaci√≥n del nuevo disco de Anathema Weather Systems. <br>ANATHEMA <br>+ Astra <br>Sala Joy Eslava (Madrid) <br>Precio: 25‚Ç¨ (Taquilla 30‚Ç¨) <br>Venta de Entradas: Sun Records, Fnac, Carrefour, puntos de la red Ticketmaster.es y en el tel√©fono 902 150 025 
+confidence:0.39334921303188763
+surrounding:Presentación del nuevo disco de Anathema Weather Systems. <br>ANATHEMA <br>+ Astra<br>Sala Joy Eslava (Madrid) <br>Precio: 25€ (Taquilla 30€) <br>Venta de Entradas: Sun Records, Fnac, Carrefour, puntos de la red Ticketmaster.es y en el teléfono 902 150 025
 THE MACBETH AND XHOUSEX PROUDLY PRESENTS: <br><a href=\"\"http://www.last.fm/music/Hello+Mexico\"\" class=\"\"bbcode_artist\"\">Hello Mexico </a> <br><a href=\"\"http://www.last.fm/music/Josh+Beech+and+The+Johns\"\" class=\"\"bbcode_artist\"\">Josh Beech and The Johns</a> <br><a href=\"\"http://www.last.fm/music/Yearbook\"\" class=\"\"bbcode_artist\"\">Yearbook</a> <br>@ The Macbeth, Hoxton Street <br>20:00 - 01:00 Entry - £3 <br>------------------------------------------------------------------------- <br>HELLO MEXICO <br><a href=\"\"http://www.hellomexico.co.uk/\"\" rel=\"\"nofollow\"\"> http://www.hellomexico.co.uk/</a> <br><a href=\"\"http://soundcloud.com/hello-mexico\"\" rel=\"\"nofollow\"\"> http://soundcloud.com/hello-mexico</a> <br>Hello Mexico are a quintet progressive rock band hailing from London. After numerous lineup changes and two previous EP releases, the band have seemingly finally hit on a perfect formula with their latest release, Five Twenty Seven. 
 },
 {
 label:"Scala"
-startChar:2968
-endChar:2973
+startChar:2960
+endChar:2965
 type:"Musical Concert"
 uri:"http://data.linkedevents.org/event/0e383509-f034-42c3-afad-a0cad5f343fe"
 confidence:0.0
@@ -71,8 +71,8 @@ The Experimental Tropic Blues Band is een band die zichzelf als doel heeft geste
 },
 {
 label:"Scala"
-startChar:2812
-endChar:2817
+startChar:2804
+endChar:2809
 type:"Musical Concert"
 uri:"http://data.linkedevents.org/event/0e383509-f034-42c3-afad-a0cad5f343fe"
 confidence:0.0
@@ -81,8 +81,8 @@ ATP are very proud to announce that EL-P will be returning to the UK in Septembe
 },
 {
 label:"EL-P"
-startChar:2932
-endChar:2936
+startChar:2924
+endChar:2928
 type:"Performing Arts"
 uri:"http://data.linkedevents.org/event/67df9916-0c4d-4dce-9255-9536bade2ddf"
 confidence:0.5264798497798947
@@ -92,19 +92,19 @@ ATP are very proud to announce that EL-P will be returning to the UK in Septembe
 },
 {
 label:"Anathema"
-startChar:1084
-endChar:1092
+startChar:1083
+endChar:1091
 type:"Musical Concert"
 uri:"http://data.linkedevents.org/event/2724e543-1eba-4933-9fdd-bea0fd6daf6e"
-confidence:0.395612026788424
+confidence:0.3979143470604297
 surrounding:Vanavond komen zij in EKKO hun nieuwe ep 'Stepping in Line' presenteren. 
-Presentaci√≥n del nuevo disco de Anathema Weather Systems. <br>ANATHEMA <br>+ Astra <br>Sala Joy Eslava (Madrid) <br>Precio: 25‚Ç¨ (Taquilla 30‚Ç¨) <br>Venta de Entradas: Sun Records, Fnac, Carrefour, puntos de la red Ticketmaster.es y en el tel√©fono 902 150 025 
+Presentación del nuevo disco de Anathema Weather Systems. <br>ANATHEMA <br>+ Astra<br>Sala Joy Eslava (Madrid) <br>Precio: 25€ (Taquilla 30€) <br>Venta de Entradas: Sun Records, Fnac, Carrefour, puntos de la red Ticketmaster.es y en el teléfono 902 150 025
 THE MACBETH AND XHOUSEX PROUDLY PRESENTS: <br><a href=\"\"http://www.last.fm/music/Hello+Mexico\"\" class=\"\"bbcode_artist\"\">Hello Mexico </a> <br><a href=\"\"http://www.last.fm/music/Josh+Beech+and+The+Johns\"\" class=\"\"bbcode_artist\"\">Josh Beech and The Johns</a> <br><a href=\"\"http://www.last.fm/music/Yearbook\"\" class=\"\"bbcode_artist\"\">Yearbook</a> <br>@ The Macbeth, Hoxton Street <br>20:00 - 01:00 Entry - £3 <br>------------------------------------------------------------------------- <br>HELLO MEXICO <br><a href=\"\"http://www.hellomexico.co.uk/\"\" rel=\"\"nofollow\"\"> http://www.hellomexico.co.uk/</a> <br><a href=\"\"http://soundcloud.com/hello-mexico\"\" rel=\"\"nofollow\"\"> http://soundcloud.com/hello-mexico</a> <br>Hello Mexico are a quintet progressive rock band hailing from London. 
 },
 {
 label:"Hello Mexico"
-startChar:2699
-endChar:2711
+startChar:2691
+endChar:2703
 type:"Musical Concert"
 uri:"http://data.linkedevents.org/event/27839f86-e1e6-4948-bfeb-51b06342ea88"
 confidence:0.7477872665426102
@@ -113,8 +113,8 @@ ATP are very proud to announce that EL-P will be returning to the UK in Septembe
 },
 {
 label:"EL-P"
-startChar:2748
-endChar:2752
+startChar:2740
+endChar:2744
 type:"Performing Arts"
 uri:"http://data.linkedevents.org/event/67df9916-0c4d-4dce-9255-9536bade2ddf"
 confidence:0.3120938919661795
@@ -123,8 +123,8 @@ ATP are very proud to announce that EL-P will be returning to the UK in Septembe
 },
 {
 label:"DESPOT"
-startChar:2950
-endChar:2956
+startChar:2942
+endChar:2948
 type:"Musical Concert"
 uri:"http://data.linkedevents.org/event/e3c273aa-bb62-4e89-925e-980d9941380b"
 confidence:0.5150346356542448
@@ -134,11 +134,11 @@ ATP are very proud to announce that EL-P will be returning to the UK in Septembe
 },
 {
 label:"Hello Mexico"
-startChar:2067
-endChar:2079
+startChar:2059
+endChar:2071
 type:"Musical Concert"
 uri:"http://data.linkedevents.org/event/27839f86-e1e6-4948-bfeb-51b06342ea88"
-confidence:0.9024554755255748
-surrounding:Presentaci√≥n del nuevo disco de Anathema Weather Systems. <br>ANATHEMA <br>+ Astra <br>Sala Joy Eslava (Madrid) <br>Precio: 25‚Ç¨ (Taquilla 30‚Ç¨) <br>Venta de Entradas: Sun Records, Fnac, Carrefour, puntos de la red Ticketmaster.es y en el tel√©fono 902 150 025 
+confidence:0.9075879651119481
+surrounding:Presentación del nuevo disco de Anathema Weather Systems. <br>ANATHEMA <br>+ Astra<br>Sala Joy Eslava (Madrid) <br>Precio: 25€ (Taquilla 30€) <br>Venta de Entradas: Sun Records, Fnac, Carrefour, puntos de la red Ticketmaster.es y en el teléfono 902 150 025
 THE MACBETH AND XHOUSEX PROUDLY PRESENTS: <br><a href=\"\"http://www.last.fm/music/Hello+Mexico\"\" class=\"\"bbcode_artist\"\">Hello Mexico </a> <br><a href=\"\"http://www.last.fm/music/Josh+Beech+and+The+Johns\"\" class=\"\"bbcode_artist\"\">Josh Beech and The Johns</a> <br><a href=\"\"http://www.last.fm/music/Yearbook\"\" class=\"\"bbcode_artist\"\">Yearbook</a> <br>@ The Macbeth, Hoxton Street <br>20:00 - 01:00 Entry - £3 <br>------------------------------------------------------------------------- <br>HELLO MEXICO <br><a href=\"\"http://www.hellomexico.co.uk/\"\" rel=\"\"nofollow\"\"> http://www.hellomexico.co.uk/</a> <br><a href=\"\"http://soundcloud.com/hello-mexico\"\" rel=\"\"nofollow\"\"> http://soundcloud.com/hello-mexico</a> <br>Hello Mexico are a quintet progressive rock band hailing from London. After numerous lineup changes and two previous EP releases, the band have seemingly finally hit on a perfect formula with their latest release, Five Twenty Seven. 
 },

@@ -13,6 +13,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.Reader;
 import java.nio.Buffer;
 import java.nio.CharBuffer;
@@ -175,16 +176,20 @@ public class GScreator
     	
     	
     	
-        String pattern = "(\\w)([\\.,?!:()<>\\+\\*/@#\\$%\\^\\|\\&;‘'█=])";
-        temp=temp.replaceAll(pattern, "$1 $2");
-        String pattern2 = "([\\.,?!:()<>\\+\\*/@#\\$%\\^\\|\\&;‘'█=])(\\w)";
-        temp=temp.replaceAll(pattern2, "$1 $2");
-        String pattern3 = "([\\.,?!:()<>\\+\\*/@#\\$%\\^\\|\\&;‘'█=])([\\.,?!:()<>\\+\\*/@#\\$%\\^\\|\\&;‘'])";
-        temp=temp.replaceAll(pattern3, "$1 $2");
-        String pattern4 = "([\\.,?!:()<>\\+\\*/@#\\$%\\^\\|\\&;‘'█=])(a-zA-Z0-9)";
-        temp=temp.replaceAll(pattern4, "$1 $2");
-    	output = output + every.geteventId() + " ; " + temp + "\n";   	
-    	limit++;
+       // String pattern = "(\\w)([\\.,?!:()<>\\+\\*/@#\\$%\\^\\|\\&;‘'█=])";
+       // temp=temp.replaceAll(pattern, "$1 $2");
+       // String pattern2 = "([\\.,?!:()<>\\+\\*/@#\\$%\\^\\|\\&;‘'█=])(\\w)";
+       // temp=temp.replaceAll(pattern2, "$1 $2");
+       // String pattern3 = "([\\.,?!:()<>\\+\\*/@#\\$%\\^\\|\\&;‘'█=])([\\.,?!:()<>\\+\\*/@#\\$%\\^\\|\\&;‘'])";
+       // temp=temp.replaceAll(pattern3, "$1 $2");
+       // String pattern4 = "([\\.,?!:()<>\\+\\*/@#\\$%\\^\\|\\&;‘'█=])(a-zA-Z0-9)";
+        //temp=temp.replaceAll(pattern4, "$1 $2");
+    	//output = output + every.geteventId() + " ; " + temp + "\n";   	
+    
+        
+        
+    	
+    	//limit++;
     }
     
     System.out.println("here4");
@@ -219,5 +224,21 @@ public class GScreator
     {
     	e.printStackTrace();
     }
+   // String filePath = "/home/meghana/workspace/stanford-parser-2012-11-12/stanford-parser.jar"; //where your jar is located.
+   // Runtime.exec(" java -jar " + filePath);
+    
+    Runtime re = Runtime.getRuntime();
+    //BufferedReader a;  		
+   // try{ 
+    re.exec("ls");
+    re.exec("java -cp /home/meghana/workspace/stanford-parser-2012-11-12/stanford-parser.jar edu.stanford.nlp.process.PTBTokenizer try.txt");
+   // re.exec("/home/meghana/workspace/stanford-parser-2012-11-12/stanford-parser.jar"); 
+     //   a =  new BufferedReader(new InputStreamReader(cmd.getInputStream()));
+  //  } catch (IOException ioe){
+  //    ioe.printStackTrace();
+   // }
+  // String resultOutput = a.readLine();    
+  // System.out.println(resultOutput);
+    
   }
 }

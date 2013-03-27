@@ -129,17 +129,28 @@ public class CsvToBean<T> {
 		//while(CSV!=null)
 		//{
 			//System.out.println("here");
-			String[] lines = new String[5000];
+			String[] lines = new String[12000];
 		    lines = CSV.split("\n");
 
+		  //  String line2 = new String();
 			for(String line : lines)
 			{
 				if(line == null)break;
 				//System.out.println(line);
 				String[] parts = new String[10];
 
-			    parts = line.split(",");
-				//System.out.println(parts[2]);
+				//line2 = line;
+				//String found = new String();
+				//String toreplace = new String();
+				//found = ",,";
+				//toreplace = "," + " " + ",";
+				//System.out.println(found);
+				//System.out.println(toreplace);
+				//line2.replaceAll(",,",",AMAAAAAAAR,");
+				//System.out.println(line2);
+			   
+				//parts = line.split(",");
+				parts = line.split(",");
 			    
             	count++;
             	if(count==100)System.gc();

@@ -208,7 +208,7 @@ Line'	/O
 presenteren	/O
 	/O
 	/O
-Presentaci√≥n	/O
+Presentación	/O
 del	/O
 nuevo	/O
 disco	/O
@@ -219,15 +219,14 @@ Systems	/O
 	/O
 <br>ANATHEMA	/O
 <br>+	/O
-Astra	/O
-<br>Sala	/O
+Astra<br>Sala	/O
 Joy	/O
 Eslava	/O
 (Madrid)	/O
 <br>Precio:	/O
-25‚Ç¨	/O
+25€	/O
 (Taquilla	/O
-30‚Ç¨)	/O
+30€)	/O
 <br>Venta	/O
 de	/O
 Entradas:	/O
@@ -247,7 +246,7 @@ es	/O
 y	/O
 en	/O
 el	/O
-tel√©fono	/O
+teléfono	/O
 902	/O
 150	/O
 025	/O
