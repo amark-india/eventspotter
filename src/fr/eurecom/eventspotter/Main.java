@@ -12,6 +12,7 @@ import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.commons.cli.PosixParser;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.LineIterator;
 
 public class Main {
     
@@ -34,42 +35,78 @@ public class Main {
             {
                 String document = FileUtils.readFileToString(new File(inFile));
                 EventSpotter evSpotter = new EventSpotter();
-                String[] validate_array = evSpotter.start_spotter(document);            
-                StringBuilder new_document=new StringBuilder();
+                String Annot_str = evSpotter.start_spotter(document);      
+               
+            //    StringBuilder new_document=new StringBuilder();
                 if(option == "evaluate_yes") 
                 {
-                	File validate_file = new File("validate.txt");
+                	File validate_file = new File("/files/interim.txt");
                 	FileWriter fweval = new FileWriter(validate_file.getAbsoluteFile(),true);
                 	BufferedWriter bweval = new BufferedWriter(fweval);
-                	for(String s : validate_array)
-                	{
-                		if (s.contains("/EVENT"))
-                		{	
-                			s = s.replace("/","\t/");
-                			s = s+" \n";
-                			new_document=new_document.append(s);
-                			
-                			//System.out.println(new_document);
-                				continue;        		
-                		}
-                		else
-                		{
-                			s = s + "\t/O\n";
-                		new_document=new_document.append(s);
-                		
-                		}
-                		
-                	}
-                	String validate_output=new_document.toString();
-                	bweval.write(validate_output);
+                	bweval.write(Annot_str);
                 	bweval.close();
+                	/*tokenize now starts*/
+           		 File output = new File("/files/tokenized.txt");
+           		 String[] command = { "/usr/lib/jvm/java-7-openjdk-amd64/bin/java", "-jar", "ptb.jar","/files/interim.txt"};
+           		 ProcessBuilder pb = new ProcessBuilder(command);
+           		 pb.redirectOutput(output);
+           		Process proc = pb.start();
+           		proc.waitFor();
+           		 //After tokenize label in conll format
+           	  String line1= new String();
+              String nextline= new String();
+              String inFile="/files/tokenized.txt";
+              String outFile="/files/es.conll";
+            
+              LineIterator valid_opt = FileUtils.lineIterator(new File(inFile));
+              File file = new File(outFile);
+     
+              try{
+                     // if file doesnt exist, then create it
+                 	if (file.exists()) {
+                 		file.delete();
+                     }
+                 	file.createNewFile();
+
+                 } catch (IOException e) {
+                     e.printStackTrace();
+                 System.out.println(e.getMessage());
+             } 
+              FileWriter fwj = new FileWriter(file.getAbsoluteFile(),true);
+              BufferedWriter bwj = new BufferedWriter(fwj);
+             while(valid_opt.hasNext())
+              {
+             
+              line1=valid_opt.nextLine();
+          		if(line1.contains("<e>"))
+          		{
+          			line1=valid_opt.nextLine();
+
+              	do{
+              		nextline= line1+ "\t" + "/I-EVENT"+"\n";
+              		bwj.write(nextline);
+             		line1=valid_opt.nextLine();
+              	}while(!line1.contains("</e>"));
+              	continue;
+              }
+          		else
+          		{
+          			bwj.write(line1+"\t"+"/O\n");
+          		}
+              	
+              }
+              bwj.close();
+                       	
                 }
             }
             catch (IOException e) 
             {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
-            }
+            } catch (InterruptedException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
         }
         
         //perform evaluation
@@ -103,7 +140,7 @@ public class Main {
             if (line.hasOption("help") || ((option!="evaluate_no")&&(option!="evaluate_yes")) )
             {
                 HelpFormatter formatter = new HelpFormatter();
-                formatter.printHelp( "eventspotter.jar --in=<document_to_annotate> --out=<annotated_document>", options );              
+                formatter.printHelp( "eventspotter.jar --in=<document_to_annotate> --out=<annotated_document> --eval<for generating conll output>", options );              
             }
             
         }

@@ -50,7 +50,6 @@ public class Tokenizer {
     private static final String sentenceType = "Sentence";
     private static List<String> punctuations = Arrays.asList(new String[]{".",
                 "!", "?"});
-
     /**
      * Tokenizes a string. 
      * @param input the input string.
@@ -81,7 +80,7 @@ public class Tokenizer {
             } else {
                 nextCharType = UNDEFINED;
                 nextChar = INVALID_CHAR;
-            }
+                    }
 
             // check if current character is a letter or number
             if (currentCharType == CH_LETTER || currentCharType == CH_NUMBER) {

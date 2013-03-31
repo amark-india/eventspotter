@@ -64,8 +64,10 @@ public class merge {
                 {
                     line1=valid_opt.nextLine();
                     line2=gs.nextLine();
+                    if(line2.contentEquals("   /O"))
+                    	continue;
                     linelist=line1.split("\t");
-                    line2=line2+"\t"+linelist[1]+"\n";
+                    line2=line2+" "+linelist[1]+"\n";
                     bw.write(line2);
                 }
                 bw.close();

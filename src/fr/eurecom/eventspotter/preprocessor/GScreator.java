@@ -1,23 +1,15 @@
 package fr.eurecom.eventspotter.preprocessor;
-import java.io.StringReader;
-import java.util.ArrayList;
+
 import java.util.List;
-import fr.eurecom.eventspotter.preprocessor.ColumnPositionMappingStrategy;
-import fr.eurecom.eventspotter.preprocessor.CsvToBean;
+import fr.eurecom.eventspotter.preprocessor.CsvParser;
 import fr.eurecom.eventspotter.preprocessor.Event;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.nio.Buffer;
-import java.nio.CharBuffer;
-import java.nio.channels.FileChannel;
 
 
 public class GScreator
@@ -34,7 +26,7 @@ public class GScreator
     	String CSV = "";
     	int count=1;
     	
-    	char a[];
+ 
     	//Read all data from file and append into string CSV
     	while(true)
     	{
@@ -52,29 +44,15 @@ public class GScreator
     			break;
     	}
     	bufRdr.close();  
-    	//System.out.println(CSV);
-	    CsvToBean<Event> bean = new CsvToBean<Event>();
+
+	    CsvParser<Event> bean = new CsvParser<Event>();
 	    System.out.println("here1");
-    
-    //Define strategy
-    ColumnPositionMappingStrategy<Event> strategy = 
-    new ColumnPositionMappingStrategy<Event>();
-    strategy.setType(Event.class);
-    strategy.setColumnMapping(new String [] { "eventId", "eventTitle", "publisher", "date" , "location" , "category" , "agent" , "eventDescription" });
-    String check = new String();
-    //Parse the CSV
-   // List<Event> Events = bean.parse(strategy,new StringReader(CSV));
-    
+  
     List<Event> Events = bean.myparse(CSV);
     System.out.println("here2");
     //Append agent and category for rows with same eventId
     Event prev = null;
-    /*
-    for(Event every : Events)
-    {
-    	System.out.println(every.geteventTitle());
-    }
-    */
+
     for(int i = 0, n = Events.size(); i < n; i++) 
     {
     	Event every = Events.get(i);
@@ -113,10 +91,10 @@ public class GScreator
        			
        			if(!catcheck)
     			{
-       			//    System.out.println("here2.63");
+
     				every.setcategory(every.getcategory() + ";" + prev.getcategory());
     			}
-       			//if(every.getagent()!="nil")
+
     			  prev = every;
     			  System.out.println("here2.62");
     		}
@@ -160,36 +138,19 @@ public class GScreator
     String output = new String();
     System.out.println("here3");
     String temp=new String();
-    int limit=1;
+  //  int limit=1;
     for(Event every : Events)
     {
-    	//if(limit>50)break;
     	temp=every.geteventDescription();
     	
     	String long_uri = "(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]";
         String short_uri="(www)[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]";
         String htm="<[^>]*>";
-       // IsMatch();
         temp=temp.replaceAll(htm,"");
         temp=temp.replaceAll(long_uri,"");
         temp=temp.replaceAll(short_uri,"");
     	
-    	
-    	
-       // String pattern = "(\\w)([\\.,?!:()<>\\+\\*/@#\\$%\\^\\|\\&;‘'█=])";
-       // temp=temp.replaceAll(pattern, "$1 $2");
-       // String pattern2 = "([\\.,?!:()<>\\+\\*/@#\\$%\\^\\|\\&;‘'█=])(\\w)";
-       // temp=temp.replaceAll(pattern2, "$1 $2");
-       // String pattern3 = "([\\.,?!:()<>\\+\\*/@#\\$%\\^\\|\\&;‘'█=])([\\.,?!:()<>\\+\\*/@#\\$%\\^\\|\\&;‘'])";
-       // temp=temp.replaceAll(pattern3, "$1 $2");
-       // String pattern4 = "([\\.,?!:()<>\\+\\*/@#\\$%\\^\\|\\&;‘'█=])(a-zA-Z0-9)";
-        //temp=temp.replaceAll(pattern4, "$1 $2");
-    	//output = output + every.geteventId() + " ; " + temp + "\n";   	
     
-        
-        
-    	
-    	//limit++;
     }
     
     System.out.println("here4");
@@ -224,21 +185,7 @@ public class GScreator
     {
     	e.printStackTrace();
     }
-   // String filePath = "/home/meghana/workspace/stanford-parser-2012-11-12/stanford-parser.jar"; //where your jar is located.
-   // Runtime.exec(" java -jar " + filePath);
-    
-    Runtime re = Runtime.getRuntime();
-    //BufferedReader a;  		
-   // try{ 
-    re.exec("ls");
-    re.exec("java -cp /home/meghana/workspace/stanford-parser-2012-11-12/stanford-parser.jar edu.stanford.nlp.process.PTBTokenizer try.txt");
-   // re.exec("/home/meghana/workspace/stanford-parser-2012-11-12/stanford-parser.jar"); 
-     //   a =  new BufferedReader(new InputStreamReader(cmd.getInputStream()));
-  //  } catch (IOException ioe){
-  //    ioe.printStackTrace();
-   // }
-  // String resultOutput = a.readLine();    
-  // System.out.println(resultOutput);
+   
     
   }
 }

@@ -27,16 +27,16 @@ public class SpotPhrases {
 
    // final Logger logger = LoggerFactory.getLogger(this.getClass());
     public HashMap<String, String> entries = new HashMap<String, String>();
-    private int maxWordLength = 3;
+    private int maxWordLength = 100;
     private String type;
 
     
     /**
-     * Loads the phares to spot form a file.
+     * Loads the phrases to spot form a file.
      * The format of the file: the first token (boundaries:whitespaces) is an identifier, the rest are the phrase to identify,
      * 
      * @param dataFile - the file with the data to pre-load
-     * @param maxWordLength - the max word lenght in tokens to handle
+     * @param maxWordLength - the max word length in tokens to handle
      * @param type - a type identifier to associate with the found occurrences.
      */
     public SpotPhrases(File dataFile, int maxWordLength, String type) {

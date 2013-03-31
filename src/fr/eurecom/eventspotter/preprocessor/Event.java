@@ -94,9 +94,9 @@ public class Event
   {
 	  this.eventDescription = eventDescription;
   }
-  public String toString() {
-    //return "event[eventId = " + eventId + ", eventTitle = " + eventTitle  + ", publisher = " + publisher + "]";
-	  return eventId + eventTitle + publisher + date + location + category + agent + eventDescription;
+  public String toString() 
+  {
+     return eventId + eventTitle + publisher + date + location + category + agent + eventDescription;
   }
 }
    
