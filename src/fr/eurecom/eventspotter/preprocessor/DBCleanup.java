@@ -67,7 +67,7 @@ public class DBCleanup
 	    			{  		    	
 	    				boolean agentcheck = prev.getagent().equals(every.getagent());  		   
     		    
-	    				if(!agentcheck)
+	    				if(agentcheck==false)
 	    				{
 	    					System.out.println("here2.62");
 	    					every.setagent(every.getagent() + ";" + prev.getagent());
@@ -77,7 +77,7 @@ public class DBCleanup
 	    		 boolean catcheck = prev.getcategory().equals(every.getcategory());
        			
        			
-       			if(!catcheck)
+       			if(catcheck==false)
     			{
     				every.setcategory(every.getcategory() + ";" + prev.getcategory());
     			}
@@ -122,11 +122,21 @@ public class DBCleanup
 	
 	    //Create output string 	   
 	    String output = new String();
-   
+	    String temp=new String();
 	    for(Event every : Events)
 	    {
+	    	temp=every.geteventDescription();
+	    	
+	    	String long_uri = "(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]";
+	        String short_uri="(www)[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]";
+	        String htm="<[^>]*>";
+	       // IsMatch();
+	        temp=temp.replaceAll(htm,"");
+	        temp=temp.replaceAll(long_uri,"");
+	        temp=temp.replaceAll(short_uri,"");
+	    	
 	    	output = output + every.geteventId() + "\t" + every.geteventTitle() + "\t" + every.getpublisher() + "\t " + every.getdate() + "\t " +
-    			 every.getlocation() + "\t " + every.getcategory() + "\t" + every.getagent() + "\t " + every.geteventDescription() + "\n";   	
+    			 every.getlocation() + "\t " + every.getcategory() + "\t" + every.getagent() + "\t " + temp + "\n";   	
 	    }
     
 	    // Open output csv file. If it doesn't exists, then create it

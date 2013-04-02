@@ -40,14 +40,14 @@ public class Main {
             //    StringBuilder new_document=new StringBuilder();
                 if(option == "evaluate_yes") 
                 {
-                	File validate_file = new File("/files/interim.txt");
+                	File validate_file = new File("interim.txt");
                 	FileWriter fweval = new FileWriter(validate_file.getAbsoluteFile(),true);
                 	BufferedWriter bweval = new BufferedWriter(fweval);
                 	bweval.write(Annot_str);
                 	bweval.close();
                 	/*tokenize now starts*/
-           		 File output = new File("/files/tokenized.txt");
-           		 String[] command = { "/usr/lib/jvm/java-7-openjdk-amd64/bin/java", "-jar", "ptb.jar","/files/interim.txt"};
+           		 File output = new File("tokenized.txt");
+           		 String[] command = { "/usr/lib/jvm/java-7-openjdk-amd64/bin/java", "-jar", "ptb.jar","interim.txt"};
            		 ProcessBuilder pb = new ProcessBuilder(command);
            		 pb.redirectOutput(output);
            		Process proc = pb.start();
@@ -55,8 +55,8 @@ public class Main {
            		 //After tokenize label in conll format
            	  String line1= new String();
               String nextline= new String();
-              String inFile="/files/tokenized.txt";
-              String outFile="/files/es.conll";
+              String inFile="tokenized.txt";
+              String outFile="es.conll";
             
               LineIterator valid_opt = FileUtils.lineIterator(new File(inFile));
               File file = new File(outFile);
@@ -78,7 +78,7 @@ public class Main {
               {
              
               line1=valid_opt.nextLine();
-          		if(line1.contains("<e>"))
+          		if(line1.contains("<EVENT>"))
           		{
           			line1=valid_opt.nextLine();
 
@@ -86,7 +86,7 @@ public class Main {
               		nextline= line1+ "\t" + "/I-EVENT"+"\n";
               		bwj.write(nextline);
              		line1=valid_opt.nextLine();
-              	}while(!line1.contains("</e>"));
+              	}while(!line1.contains("</EVENT>"));
               	continue;
               }
           		else

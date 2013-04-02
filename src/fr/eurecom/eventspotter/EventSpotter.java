@@ -32,7 +32,7 @@ public class EventSpotter
     public String start_spotter(String document) throws IOException
     {
         this.titlesFilePath = "/opt/event-titles.list";
-        this.dbPath = "jdbc:mysql://localhost/eventspotter";
+        this.dbPath = "jdbc:mysql://localhost/trial";
         this.dbDriver = "com.mysql.jdbc.Driver";
         this.dbUser = "root";
         this.dbPassword = "root";
@@ -59,13 +59,12 @@ public class EventSpotter
         {      	
             
         	String label= fs.getFeature("title").getValueAsString();
-            String new_label="<e>"+label+"</e>";
-    
-            document=document.replaceAll(label,new_label);
+            String new_label="<EVENT>"+label+"</EVENT>";
+            if(!document.contains(new_label))
+            	document=document.replaceAll(label,new_label);
             int startChar = fs.getFeature("begin").getValueAsInteger();
             int endChar = fs.getFeature("end").getValueAsInteger();
-            
-            
+            String agent = fs.getFeature("agent").getValueAsString();            
             String type = fs.getFeature("type").getValueAsString();
             String uri = fs.getFeature("eventId").getValueAsString();
             String confidence =fs.getFeature("confidence").getValueAsString();
@@ -81,6 +80,8 @@ public class EventSpotter
                 bw.write("startChar:"+startChar);
                 bw.newLine();
                 bw.write("endChar:"+endChar);
+                bw.newLine();
+                bw.write("agent(s):\""+agent+"\"");
                 bw.newLine();
                 bw.write("type:\""+type+"\"");
                 bw.newLine();

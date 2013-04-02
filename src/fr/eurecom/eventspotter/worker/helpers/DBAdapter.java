@@ -61,10 +61,23 @@ public class DBAdapter {
     public List<String> getAgents(String eventId) {
         try {
             Connection c = getConnection();
+            String [] agents = new String[30];
             PreparedStatement pstmt = c.prepareStatement("SELECT agent FROM eventMedia WHERE eventId='"+eventId+"'");
             ResultSet rs = pstmt.executeQuery();
             List<String> ret = new ArrayList<String>();
             while (rs.next()) {
+
+            	if(rs.getString(1).contains(";"))
+            	{
+            		agents=rs.getString(1).split(";");
+            		System.out.println("had many agents!");
+            	    for(String s : agents)
+            	    {
+            	    	if(!s.equals("nil"))
+            	    	ret.add(s);
+            	    }
+            	}
+            	else
                 ret.add(rs.getString(1));
             }
             return ret;
@@ -114,13 +127,13 @@ public class DBAdapter {
     public String getDesc(String eventId) {
         try {
             Connection c = getConnection();
-            PreparedStatement pstmt = c.prepareStatement("SELECT eventDiscription FROM `eventMedia` WHERE eventId=?");
+            PreparedStatement pstmt = c.prepareStatement("SELECT eventDescription FROM `eventMedia` WHERE eventId=?");
             pstmt.setString(1,eventId);
             ResultSet rs = pstmt.executeQuery();
             List<String> ret = new ArrayList<String>();
            // System.out.println(eventId);
             while (rs.next()) {
-                return rs.getString("eventDiscription");
+                return rs.getString("eventDescription");
             }
             
         } catch (Exception ex) {
