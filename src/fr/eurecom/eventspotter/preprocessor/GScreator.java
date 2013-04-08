@@ -70,14 +70,13 @@ public class GScreator
     	System.out.println(every.geteventTitle());
     }
     */
-    for(int i = 0, n = Events.size(); i < n; i++) 
+    /*for(int i = 0, n = Events.size(); i < n; i++) 
     {
     	Event every = Events.get(i);
         System.out.println("here2.5");
 
     	if(i == 0)
-    	{
-    	    System.out.println("here2.55");
+    	{	 System.out.println("here2.55");
     		prev = every;
     	}
     	else
@@ -150,13 +149,13 @@ public class GScreator
     	{
     		break;
     	}
-    }
+    }*/
 	//Create output string 	   
     String output = new String(); 
    
     System.out.println("here3");
     String temp=new String();
-    int limit=1;
+
     for(Event every : Events)
     {
     	//if(limit>50)break;
