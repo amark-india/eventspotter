@@ -79,9 +79,13 @@ public class EventSpotter
         {      	
             
         	String label= fs.getFeature("title from input").getValueAsString();
-            String new_label=" <EVENT>"+label+"</EVENT> ";
+            String new_label="<EVENT>"+label+"</EVENT>";
             if(!document.contains(new_label))
-            	document=document.replaceAll(" "+label+" ",new_label);
+            	{
+            	document=document.replaceAll("([!\\s?.])"+label+"([!\\s?.])","$1"+new_label+"$2");
+            	
+            	document=document.replaceAll("([!\\s?.])"+label+"([!\\s?.])","$1"+new_label+"$2");
+            	}
             int startChar = fs.getFeature("begin").getValueAsInteger();
             int endChar = fs.getFeature("end").getValueAsInteger();
             String agent = fs.getFeature("agent").getValueAsString();            
