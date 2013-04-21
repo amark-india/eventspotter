@@ -96,7 +96,8 @@ public class EventSpotterLight {
             fs.getFeature("eventId").setValue(eventId);
 
             if (fs.getFeature("title") != null) {
-                fs.getFeature("title").setValue(dbAdapter.getTitle(eventId));
+            	 fs.getFeature("title").setValue(dbAdapter.getTitle(eventId));
+                
            //     logger.info("Re-Setting eventTitle:" + fs.toString());
             }
             Feature type = new Feature("type","null");

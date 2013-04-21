@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 import org.apache.commons.io.FileUtils;
@@ -55,13 +56,32 @@ public class EventSpotter
             e.printStackTrace();
         }
         Set<FeatureStructure> s = new HashSet<FeatureStructure>(spottedevents);
+        for(FeatureStructure str : s)
+        {
+        	for(FeatureStructure ss : s)
+        	{
+        	if(!str.getFeature("title from input").getValueAsString().contentEquals(ss.getFeature("title from input").getValueAsString()))
+        	{
+        			if(str.getFeature("title from input").getValueAsString().contains(ss.getFeature("title from input").getValueAsString()))
+        		        		{
+        				if(ss.getFeature("title from input").getValueAsString()!="null")
+        			ss.getFeature("title from input").setValue("null");
+        		}
+        		}
+        	}
+        }
+        
+        Iterator<FeatureStructure> iter = s.iterator();
+        while (iter.hasNext()) {
+            if (iter.next().getFeature("title from input").getValueAsString() == "null") iter.remove();
+        }
         for (FeatureStructure fs : s) 
         {      	
             
-        	String label= fs.getFeature("title").getValueAsString();
-            String new_label="<EVENT>"+label+"</EVENT>";
+        	String label= fs.getFeature("title from input").getValueAsString();
+            String new_label=" <EVENT>"+label+"</EVENT> ";
             if(!document.contains(new_label))
-            	document=document.replaceAll(label,new_label);
+            	document=document.replaceAll(" "+label+" ",new_label);
             int startChar = fs.getFeature("begin").getValueAsInteger();
             int endChar = fs.getFeature("end").getValueAsInteger();
             String agent = fs.getFeature("agent").getValueAsString();            
@@ -69,7 +89,7 @@ public class EventSpotter
             String uri = fs.getFeature("eventId").getValueAsString();
             String confidence =fs.getFeature("confidence").getValueAsString();
             String surrounding =fs.getFeature("Surrounding").getValueAsString();
-        
+            String input_Text =fs.getFeature("title from input").getValueAsString();        
             try{
                 FileWriter fw = new FileWriter(file.getAbsoluteFile(),true);
                 BufferedWriter bw = new BufferedWriter(fw);
@@ -89,7 +109,7 @@ public class EventSpotter
                 bw.newLine();
                 bw.write("confidence:"+confidence);
                 bw.newLine();
-                bw.write("surrounding:"+surrounding);
+                bw.write("atleast input"+input_Text);
                 bw.newLine();
                 bw.write("},");
                 bw.newLine();

@@ -110,7 +110,9 @@ public class SpotPhrases {
                 }
                 sb.append(token);
                 String toCheck;
+                String input_title;
                 toCheck = sb.toString().toLowerCase();
+                input_title = sb.toString();
            //     logger.debug("Checking:" + toCheck);
              //   logger.info("Checking:"+toCheck);
                
@@ -124,6 +126,7 @@ public class SpotPhrases {
                     m.addFeature(new Feature<String>("title", toCheck));
                     m.addFeature(new Feature<Integer>("begin", bf));
                     m.addFeature(new Feature<Integer>("end", ef));
+                    m.addFeature(new Feature<String>("title from input", input_title));
                     m.setCoveredText(m.getSofaChunk(sofa));
 
                     matches.add(m);

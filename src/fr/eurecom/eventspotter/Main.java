@@ -54,10 +54,11 @@ public class Main {
            		proc.waitFor();
            		 //After tokenize label in conll format
            	  String line1= new String();
-              String nextline= new String();
+              String modified_line= new String();
               String inFile="tokenized.txt";
               String outFile="es.conll";
-            
+              int subevent=0;
+              boolean flag = true;
               LineIterator valid_opt = FileUtils.lineIterator(new File(inFile));
               File file = new File(outFile);
      
@@ -74,26 +75,64 @@ public class Main {
              } 
               FileWriter fwj = new FileWriter(file.getAbsoluteFile(),true);
               BufferedWriter bwj = new BufferedWriter(fwj);
+          	  
              while(valid_opt.hasNext())
               {
-             
-              line1=valid_opt.nextLine();
-          		if(line1.contains("<EVENT>"))
+            	 line1=valid_opt.nextLine();
+              if(line1.contains("<EVENT>"))
+              {
+            	  ++subevent;
+            	  continue;
+              }
+              if(line1.contains("</EVENT>"))
+              {
+            	  --subevent;
+            	  continue;
+              }
+
+              if(subevent>0)
+              {
+            	modified_line= line1+ "\t" + "I-EVENT"+"\n";
+        		bwj.write(modified_line);
+              }  
+              
+              if(subevent==0)
+              {
+            	  bwj.write(line1+"\t"+"O\n");
+              	 
+              }
+      /*    		if(line1.contains("<EVENT>"))
           		{
-          			line1=valid_opt.nextLine();
+          	        line1=valid_opt.nextLine();
 
               	do{
-              		nextline= line1+ "\t" + "/I-EVENT"+"\n";
-              		bwj.write(nextline);
-             		line1=valid_opt.nextLine();
-              	}while(!line1.contains("</EVENT>"));
+
+              		if(line1.contains("<EVENT>"))
+              		{
+              			subevent++;
+              			line1=valid_opt.nextLine();
+              			continue;
+              		}
+              		if(subevent!=0 && line1.contains("</EVENT>"))
+              		{
+              			subevent--;
+              			line1=valid_opt.nextLine();
+              			continue;
+              		}
+              
+              		modified_line= line1+ "\t" + "I-EVENT"+"\n";
+              		bwj.write(modified_line);
+          			line1=valid_opt.nextLine();
+          			if(subevent==0 && line1.contains("</EVENT>"))
+          				flag= false;
+          			}while(flag);
               	continue;
               }
           		else
           		{
-          			bwj.write(line1+"\t"+"/O\n");
+          			bwj.write(line1+"\t"+"O\n");
           		}
-              	
+              	*/
               }
               bwj.close();
                        	
