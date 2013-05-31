@@ -22,7 +22,7 @@ public class CsvParser<T>
 			if(line == null)break;
 
 			String[] parts = new String[10];
-			parts = line.split(",");
+			parts = line.split("\t");
 			    
             count++;
             if(count==100)System.gc();
