@@ -27,7 +27,7 @@ public class Main {
         // read options
         String option = readOptions(options, args);
 
-        // perform the extraction
+        // perform the extraction 
         if(option == "evaluate_no" || option == "evaluate_yes") 
         {
                 //read file
