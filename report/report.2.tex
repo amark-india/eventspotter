@@ -62,11 +62,42 @@ BookSpotter Enhancement Engine by Sztaki\footnote{http://blog.iks-project.eu/int
 \addcontentsline{toc}{chapter}{2 Related Work}
 
 \chapter*{3 Approach}
-As mentioned earlier, the Eventspotter borrows the four stage approach towards event detection from DBpedia \cite{Mendes11dbpediaspotlight:} .However, the Eventspotter differs in the definition of these stages. The four main stages of the Eventspotter approach are (1)Preprocessing (2)Candidate selection (3)Disambiguation and (4)Postprocessing.
-Let us look at each of these in greater detail.
-\section*{3.1 Preprocessing}
+The Eventspotter approach has four stages namely: (1)Preprocessing, (2)Candidate selection, (3)Disambiguation and (4)Postprocessing. It is imperative to restate that we have reused components of the BookSpotter which act as a foundation on which the EventSpotter is buit on.
+\section*{3.1 Overview}
+Before we look at each of these in greater detail, it is important to first gain a high level understanding of the entire system.
 
-\addcontentsline{toc}{section}{Preprocessing}
+[diagram]
+
+\subsection*{3.1.1 EventMedia Dataset}
+We used a snapshot of the EventMedia database which constituted 34195 events. This snapshot, taken on 26th November 2012, contains metadata for events that occurred during the year 2012. Each event in the eventmedia snapshot has the following attributes: eventId, eventTitle, publisher, date (in the form startDate, For instance 10-21-2012), location, LIST OF \textless categories\textgreater, LIST OF \textless agents\textgreater and event description. The events belonged to one or more of the following categories: Musical Concert, Festivals, Nightlife, Social Gathering, Performing Arts, Visual and Performing Arts, Movies, Visual Arts, Food, Neighborhood, Community, Religion and Spirituality, Museums and Attractions, Outdoors Recreation, Family and Kids, Galleries and Exhibits, Professional, Fundraising and Charity, Commercial and Sales, Education, Sports, Organizations and Meetups, Business and Networking, Politics, Media and Literary, Health and Wellness, Life Style, Conferences and Tradeshows, On Campus, Science, Technology, Animals, Comedy, Other and Miscellaneous.
+\addcontentsline{toc}{subsection}{3.1.1 EventMedia Dataset}
+
+\subsection*{3.1.2 EventTitles}
+EventTitles.list is a text file which contains, as the name suggests, titles of all events listed in the EventMedia database, mapped to their corresponding eventId. This file is loaded onto memory at the beggining of the execution.
+\addcontentsline{toc}{subsection}{3.1.2 Eventtitles}
+
+As shown in the figure, the EventSpotter spots candidate entities by matching input text with the eventtitles file and then validates these spots using the agent and location fields from the eventMedia dataset.
+\addcontentsline{toc}{section}{3.1 Overview}
+
+\section*{3.2 Preprocessing}
+
+
+We first follow a method of text tokenization. Our tokenizer divides the input text as well as a list of event title names into a number of distinct tokens. The tokenizer ensures that there is consistency when it is required to match any 2 strings between the two. Second, the entire input text is also divided into a a set of sentences, a process which we call `sentensize’. The objective of this process is to ensure the availability of distinct sentences for the later stage of Disambiguation.
+
+\addcontentsline{toc}{section}{3.2 Preprocessing}
+
+\section*{3.3 Candidate Selection}
+
+For every input text token that was derived from the previous tokenization stage, our system checks for a case-insensitive match with tokens from the list of event title names. When a match is found, the string of tokens are added to a list of matches. Further, only if each match starts with capital letter and first character is not a digit, it is selected as a candidate.
+\addcontentsline{toc}{section}{3.3 Candidate Selection}
+
+\section*{3.4 Disambiguation}
+
+
+\addcontentsline{toc}{section}{3.4 Disambiguation}
+
+
+
 \addcontentsline{toc}{chapter}{3 Approach}
 \chapter*{4 Evaluation}
 We tested the Eventspotter against Stanford Conditional Random Field\footnote{\url{http://nlp.stanford.edu/software/CRF-NER.shtml}} and Opencalais\footnote{\url{http://www.opencalais.com/}}. These tests were of a relatively small scale due to the need to manually create the the golden dataset. We felt it would be interesting to understand the performance of the flexible knowledge based approach of the Eventspotter against the purely grammar-based approaches of Stanford and Opencalais. Before we present the results of our experiments, it would be appropriate to understand the creation of the golden dataset. 
