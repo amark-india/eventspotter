@@ -149,11 +149,27 @@ For every input text token that was derived from the previous tokenization stage
 \section*{3.4 Disambiguation}
 In this stage we ascertain the validity of each entry in the candidate list with the help of meta data stored in the eventmedia dataset. Here we make an important hypothesis: It is prudent, for a knowledge based approach to event detection, to identify only those events which are reasonably described in the input text. We consider an event as reasonably described if and only if there is a mention of :
 *At least one of the agents(performing artists)  OR *The location(event venue) in the input text. In other words, this means that many events may go undetected in cases where the agent or the location string is not present in the input text. Though this would affect the recall of the system, we felt that it would be a trade-off worth making. This is primarily because, a large number of events are titled with commonly used words in a language. This means that any strategy that adopts an approach that is less restrictive would end up with a many false positive results. As mentioned earlier, we recognize that basing our approach solely on the first hypothesis, will not allow us to achieve a near-exhaustive detection of event entities in the text. Hence, we intend to deal with these false negatives by employing a linguistic approach in the second pass to detect those events which are not reasonably described in the input text.
+
+For each candidate event, we query the sql database manifestation of the EventMedia dataset to get the names of agents who had performed at that event. We then try to spot these  agent tokens in the input text using our naive spotter that we described in the candidate selection stage. If at least one agent is found in the input text then the candidate spot is considered as a valid event and added to the list of detected events. Also for each validated candidate spot we compute a cosine similarity measure between the surroundings of the spot and the event description in the sql database. The event description contains other key information such as location, sentimental expressions such as <Add examples> , entry fee, domain specific terms such as, <Add examples>, some historical background about the artists, events and so on. These are aspects which are unique to each event and there is a mention of some or all of these attributes in each event description. Thus, it makes logical sense to compare the surroundings of a spot with the corresponding event description. This way we manage to match various miscellaneous attributes of an event which can, generally not be categorized into fields such as agents, location etc. We empirically defined the surroundings to be the current, previous and next sentences from the spot.This cosine similarity measure is considered as the confidence score for each valid spot. The disambiguation stage yields a list of detected event titles and their respective confidence scores.
+
 \addcontentsline{toc}{section}{3.4 Disambiguation}
 
-\section*{3.5 Postprocessing}
+\section*{3.5 Post processing}
 
-\addcontentsline{toc}{section}{3.5 Postprocessing}
+In this section we speak about the post processing that was done in order to present the results in a simple and useful manner. Each entry in the detected events list was processed and presented in a json format as shown below.
+\begin{lstlisting}
+{
+                   label: "Pocktoberfest",
+                   startChar: 138,
+                   endChar: 151,
+                   type: "Musical Concert",
+                   agent(s): "club smith"
+                   uri: "http://data.linkedevents.org/event/86aac5b8-4f0f-41bb-96e9-4377865dc5dd",
+                   confidence: 0.82796,
+},
+\end{lstlisting}
+The uri field points to a web page corresponding to the event on the linkedevents.org website. This page is a  web manifestation of the information in the eventmedia dataset. We decided to expose the confidence value to give the users the freedom to allocate any threshold of their choice. Along with the json representation we also annotate the event titles in-place in the input text. To maintain uniformity we follow the same scheme of annotation as defined during the Golden data set creation. For example, <add example>
+\addcontentsline{toc}{section}{3.5 Post processing}
 
 \section*{3.6 Application Pseudocode}
 The Eventspotter application has been implemented in Java. We show here the assimilated pseudocode for the main logic of the Eventspotter implementation.
