@@ -1,0 +1,33 @@
+\begin{thebibliography}{1}
+
+\bibitem{EURECOM+3865}
+H.~{K}hrouf, V.~{M}ilicic, and R.~{T}roncy, ``{E}vent{M}edia live: {E}xploring
+  events connections in real-time to enhance content,'' in {\em {ISWC} 2012,
+  {S}emantic {W}eb {C}hallenge at 11th {I}nternational {S}emantic {W}eb
+  {C}onference, {N}ovember 11-15, 2012, {B}oston, {USA}}, ({B}oston, {UNITED}
+  {STATES}), 11 2012.
+
+\bibitem{Gruhl_contextand}
+D.~Gruhl, M.~Nagarajan, J.~Pieper, and C.~Robson, ``Context and domain
+  knowledge enhanced entity spotting in informal text.''
+
+\bibitem{Hassell06ontology-drivenautomatic}
+J.~Hassell, B.~Aleman-meza, and I.~B. Arpinar, ``Ontology-driven automatic
+  entity disambiguation in unstructured text,'' in {\em In International
+  Semantic Web Conference}, pp.~44--57, 2006.
+
+\bibitem{Mendes11dbpediaspotlight:}
+P.~N. Mendes, M.~Jakob, A.~García-silva, and C.~Bizer, ``Dbpedia spotlight:
+  Shedding light on the web of documents,'' in {\em In Proceedings of the 7th
+  International Conference on Semantic Systems (I-Semantics}, 2011.
+
+\bibitem{Ritter_opendomain}
+A.~Ritter, S.~Clark, and O.~Etzioni, ``Open domain event extraction from
+  twitter.''
+
+\bibitem{DBLP:journals/corr/abs-1303-4702}
+T.~Steiner, S.~van Hooland, and E.~Summers, ``Mj no more: Using concurrent
+  wikipedia edit spikes with social network plausibility checks for breaking
+  news detection,'' {\em CoRR}, vol.~abs/1303.4702, 2013.
+
+\end{thebibliography}
