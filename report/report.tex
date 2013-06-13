@@ -5,10 +5,12 @@
 \usepackage{pdfpages}
 \usepackage{fancyvrb}
 \usepackage{fancybox}
-\bibliographystyle{ieeetr}
 \usepackage{listings}
 \usepackage{color}
 \usepackage{framed,color}
+\usepackage{textcomp}
+\usepackage{url}
+\bibliographystyle{ieeetr}
 \begin{document}
 
 % listing styles
@@ -83,7 +85,7 @@ In today's day and age, we are surrounded by a plethora of events, some of them 
 
 \section*{1.2 Challenges for Entity Extraction in the Event Domain}
 
-The complexity of entity extraction increases manifold in the event domain. The biggest challenge of this task is to obtain a clear unambiguous definition of an event title. This is because there is a lack of uniform rule based nomenclature with respect to events. For instance, it is common practice for musical events to be named after the artists who are performing at the event (see example 1.1). Here, the event title is ``Beth Jeans Houghton '' which is also the name of the performing artist. This brings in a word sense disambiguation problem, where the onus is on comprehending whether the spot refers to the artist or to the event. The next level of complexity is introduced when an event title is created as an amalgamation of the artist names, band names, event venue and at times even the date, using special characters (see example 1.2). Here, ``Stay Sharp Album Release Party: Higher Hands + Grilled Lincolns + Pressing Strings'' is an event title as per the information uploaded on the event sharing website `eventful'. In essence this means any stripping or stop-wording of input text, which would have otherwise been a natural choice for a preprocessing step in any information extraction problem, is completely out of question. This also means the length of an event title may range from just one word to a phrase with many words and punctuations. Further, at times the boundaries of creative license are stretched to the point where events are named with words that don’t even exist in the language vocabulary (see example 1.3). Here, ``Pocktoberfest'' is an yearly event which takes place at the ``Pocklington arts center''.If all events followed a standard naming scheme, our task which now seems herculean, would have been average, at best.\newline 
+The complexity of entity extraction increases manifold in the event domain. The biggest challenge of this task is to obtain a clear unambiguous definition of an event title. This is because there is a lack of uniform rule based nomenclature with respect to events. For instance, it is common practice for musical events to be named after the artists who are performing at the event (see example 1.1). Here, the event title is ``Beth Jeans Houghton '' which is also the name of the performing artist. This brings in a word sense disambiguation problem, where the onus is on comprehending whether the spot refers to the artist or to the event. The next level of complexity is introduced when an event title is created as an amalgamation of the artist names, band names, event venue and at times even the date, using special characters (see example 1.2). Here, ``Stay Sharp Album Release Party: Higher Hands + Grilled Lincolns + Pressing Strings'' is an event title as per the information uploaded on the event sharing website `eventful'. In essence this means any stripping or stop-wording of input text, which would have otherwise been a natural choice for a preprocessing step in any information extraction problem, is completely out of question. This also means the length of an event title may range from just one word to a phrase with many words and punctuations. Further, at times the boundaries of creative license are stretched to the point where events are named with words that don't even exist in the language vocabulary (see example 1.3). Here, ``Pocktoberfest'' is an yearly event which takes place at the ``Pocklington arts center''.If all events followed a standard naming scheme, our task which now seems herculean, would have been average, at best.\newline 
 
 \begin{lstlisting}
 Example 1.1
@@ -128,11 +130,10 @@ The EventSpotter approach has four stages namely: (1)Preprocessing, (2)Candidate
 \addcontentsline{toc}{chapter}{3 Approach}
 \section*{3.1 Overview}
 Before we look at each of these in greater detail, it is important to first gain a high level understanding of the entire system.
-
-\begin{center}
-\includegraphics[width=12cm]{architecture}
+\begin{figure}
+\centering\includegraphics[width=12cm]{architecture}
 \caption{Figure 1: EventSpotter system}
-\end {center}
+\end{figure}
 
 \addcontentsline{toc}{section}{3.1 Overview}
 
@@ -240,11 +241,11 @@ In this section we speak about the post processing that was done in order to pre
 \end{lstlisting}
 This listing shows the representation of a detected event in JSON format.\newline \newline
 
-The uri field points to a web page corresponding to the event on the linkedevents.org website. This page is a  web manifestation of the information in the EventMedia dataset. We decided to expose the confidence value to give the users the freedom to allocate any threshold of their choice. Along with the JSON representation we also annotate the event titles in-place in the input text. To maintain uniformity we follow the same scheme of annotation as defined during the Golden data set creation. As shown in step 5 of figure 1, a sample in-place of the EventSpotter would look like ``Insomniac presents \textless EVENT \textgreater Volume Sundays\textless /EVENT \textgreater Featuring Zeds Dead...''. 
+The uri field points to a web page corresponding to the event on the linkedevents.org website. This page is a  web manifestation of the information in the EventMedia dataset. We decided to expose the confidence value to give the users the freedom to allocate any threshold of their choice. Along with the JSON representation we also annotate the event titles in-place in the input text. To maintain uniformity we follow the same scheme of annotation as defined during the Golden data set creation. As shown in step 5 of figure 1, a sample in-place of the EventSpotter would look like ``Insomniac presents $<$ EVENT $>$ Volume Sundays$<$ /EVENT $>$ Featuring Zeds Dead...''. 
 \addcontentsline{toc}{section}{3.5 Post Processing}
 
 \section*{3.6 Application Pseudocode}
-The EventSpotter application has been implemented in Java. We show here the assimilated pseudocode for the main logic of the EventSpotter implementation. The complete source code and all necessary files can be found here \footnote{\url{https://github.com/amark-india/EventSpotter/}}. \newline
+The EventSpotter application has been implemented in Java. We show here the assimilated pseudocode for the main logic of the EventSpotter implementation. The complete source code and all necessary files can be found here \footnote{\url{https://github.com/amark-india/EventSpotter}}. \newline
 
 \begin{lstlisting}
 Input : unstructured text 
@@ -262,7 +263,7 @@ candidates = doSpotting(input, tokens, entries)
 
 #Disambiguation
 for each candidate in candidates
-	if candidate doesn’t start with capital letter and first char is not a digit
+	if candidate doesn't start with capital letter and first char is not a digit
           then continue to next candidate
 	end if
 
@@ -301,7 +302,7 @@ As mentioned in section 3.1.1, the EventSpotter project makes use of a snapshot 
 \addcontentsline{toc}{chapter}{4 Evaluation}
 
 \section*{4.1 Golden Dataset Creation}
-We followed a set of rules in order to ensure consistent annotation. For the purpose of annotation we defined a musical event title as : a ``proper noun that refers to a musical concert or festival''. In all cases, an agreement between 4 human annotators was necessary. Any disagreement was resolved after deliberation and discussion. We explored different styles of annotation and decided to use the  \textless EVENT \textgreater EVENT-ENTITY \textless /EVENT\textgreater style. This allowed the human annotators to remain focussed only on the task of finding semantic meaning and saved them the dilema of deciding which tokens to annotate. Initially we asked the human annotators to add ``/EVENT'' at the end of every token belonging to an event entity. However, this brought in a sense of ambiguity with respect to special characters such as ``,'',``+'',``-'' etc. For instance, ``Scala:)'' would be annotated as ``Scala:)/EVENT''. We first tried to circumvent this problem by asking the human annotators to perform annotation on a tokenized dataset. The tokenized test data in this case would be ``Scala : )'' and would thus be annotated as ``Scala/EVENT :/O )/O''. However, we soon realized that it was quite inconveneint for the annotators especially due to the existence of event titles which were actually phrases with multiple words and special characters. For instance, ``Julian Clary, Position Vacant - Enquire Within .'' would be an event name that human annotator would have to annotate in the following manner ``Julian/EVENT Clary/EVENT ,/EVENT Position/EVENT Vacant/EVENT -/EVENT Enquire/EVENT Within/EVENT ./EVENT''. Notice that both ``,'' and ``-'' had to be annotated as events even though it seemed almost unnatural for the human annotators to add ``/EVENT'' in these cases. The task of manual annotation of documents with event entities is a complex and demanding task by itself. We noticed that these minor syntactic problems significantly slowed the process and thus realized that there was a need to find a simpler scheme for annotation. We then decided that a candidate spot, would be annotated with \textless EVENT\textgreater and \textless /EVENT\textgreater. If `scala' was an event in the phrase `scala:)' (see example 7.1), we annotated it as `\textless EVENT\textgreater scala \textless /EVENT\textgreater :)' and ``Julian Clary, Position Vacant - Enquire Within .'' was annotated as ``\textless EVENT\textgreaterJulian Clary, Position Vacant - Enquire Within .\textless /EVENT\textgreater ''(see example 7.2). We then programatically transformed this annotation into a conll format where all the words enclosed between the \textless EVENT\textgreater tags were annotated as ``I-EVENT'' and all words outside these tags and all special characters in the golden dataset were annotated as ``O''- Big Oh. \newline
+We followed a set of rules in order to ensure consistent annotation. For the purpose of annotation we defined a musical event title as : a ``proper noun that refers to a musical concert or festival''. In all cases, an agreement between 4 human annotators was necessary. Any disagreement was resolved after deliberation and discussion. We explored different styles of annotation and decided to use the $<$ EVENT $>$ EVENT-ENTITY $<$ /EVENT$>$ style. This allowed the human annotators to remain focussed only on the task of finding semantic meaning and saved them the dilema of deciding which tokens to annotate. Initially we asked the human annotators to add ``/EVENT'' at the end of every token belonging to an event entity. However, this brought in a sense of ambiguity with respect to special characters such as ``,'',``+'',``-'' etc. For instance, ``Scala:)'' would be annotated as ``Scala:)/EVENT''. We first tried to circumvent this problem by asking the human annotators to perform annotation on a tokenized dataset. The tokenized test data in this case would be ``Scala : )'' and would thus be annotated as ``Scala/EVENT :/O )/O''. However, we soon realized that it was quite inconveneint for the annotators especially due to the existence of event titles which were actually phrases with multiple words and special characters. For instance, ``Julian Clary, Position Vacant - Enquire Within .'' would be an event name that human annotator would have to annotate in the following manner ``Julian/EVENT Clary/EVENT ,/EVENT Position/EVENT Vacant/EVENT -/EVENT Enquire/EVENT Within/EVENT ./EVENT''. Notice that both ``,'' and ``-'' had to be annotated as events even though it seemed almost unnatural for the human annotators to add ``/EVENT'' in these cases. The task of manual annotation of documents with event entities is a complex and demanding task by itself. We noticed that these minor syntactic problems significantly slowed the process and thus realized that there was a need to find a simpler scheme for annotation. We then decided that a candidate spot, would be annotated with $<$ EVENT$>$ and $<$ /EVENT$>$. If `scala' was an event in the phrase `scala:)' (see example 7.1), we annotated it as `$<$ EVENT$>$ scala $<$ /EVENT$>$ :)' and ``Julian Clary, Position Vacant - Enquire Within .'' was annotated as ``$<$ EVENT$>$Julian Clary, Position Vacant - Enquire Within .$<$ /EVENT$>$ ''(see example 7.2). We then programatically transformed this annotation into a conll format where all the words enclosed between the $<$ EVENT$>$ tags were annotated as ``I-EVENT'' and all words outside these tags and all special characters in the golden dataset were annotated as ``O''- Big Oh. \newline
 
 \begin{lstlisting}
 Example 7.1
@@ -353,7 +354,7 @@ Opencalais & no events & no events & no events \\
 \label{table:nonlin} % is used to refer this table in the text
 \end{table}
 
-The second set of tests run were run on the manually annotated golden dataset wwe did notice a slight increase in hich contained 115 valid event annotations. Again the EventSpotter's performance outshined that of the Stanford CRF in terms of recall and F-measure. It obtained a score of 68.14\% for recall and 43.14\% for F-measure, over the scores of 54.87\% and 56.88\% respectively of the Stanford CRF trained with synthetic annotation and 11.5\% & 18.71\% respectively when trained with manual annotation. Again, Opencalais did not identify any musical event entities at all. We also tested a linear combination of EventSpotter and Stanford CRF trained on synthetically annotated data, with Stanford CRF acting as a gazateer to EventSpotter. Though there wasn't a stark improvement, the recall score did increase slightly to 70.8\%.
+The second set of tests run were run on the manually annotated golden dataset we did notice a slight increase in hich contained 115 valid event annotations. Again the EventSpotter's performance outshined that of the Stanford CRF in terms of recall and F-measure. It obtained a score of 68.14\% for recall and 43.14\% for F-measure, over the scores of 54.87\% and 56.88\% respectively of the Stanford CRF trained with synthetic annotation and 11.5\% and 18.71\% respectively when trained with manual annotation. Again, Opencalais did not identify any musical event entities at all. We also tested a linear combination of EventSpotter and Stanford CRF trained on synthetically annotated data, with Stanford CRF acting as a gazateer to EventSpotter. Though there wasn't a stark improvement, the recall score did increase slightly to 70.8\%.
 \begin{table}
 \caption{Tests Performed with Manually Annotated Golden Dataset with 115 valid event annotations} % title of Table
 \centering % used for centering table
@@ -381,7 +382,6 @@ In this paper, we presented EventSpotter, a tool for detecting musical event ent
 ``In the first paragraph of the text the authors have spoken about ``Banquet's Big Day Out'' (hyperlinked with http://data.linkedevents.org/event/cde982ba-5e6a-412c-b719-c2f73a83535f) which is a ``festival'' event featuring many artists including``Cyantific, David Rodigan, Futures, Original Sin, Sharks, Hundred Reasons, et al.'' at ``Imber Court'' on ``2012-06-04 at 12:00:00''.'' 
 \end{lstlisting}
 
-\newline
 Once the EventSpotter detects a valid event it can easily generate such a summary by spotting other attributes of an the same event such as location, artists, date in the surroundings. Then by assigning a confidence score to each of these attribute spots, we could customize the summary such that the collective confidence score is higher than a selected threshold.
 
 As mentioned before, the EventSpotter project began with a goal to detect event entities in input text. In this paper we have presented a musical-event-spotter for events in 2012 and in future we intend to extend this to other domains such as Sports, Politics, Entertainment, etc. We also plan to continually better the system with frequent upgrades. For instance by way of incorporating a Support Vector Machine we plan to experiment the usage of multiple features of an event to expand the ideal feature set for optimal event detection. We intend to use machine learning softwares such as WEKA to classify events based on fuzzy features such as proximity to sentimental expressions and domain specific terms as explored by Gruhl et al. in \cite{Gruhl_contextand}. We could use Parts Of Speech tags, proximity to domain specific and sentimental expressions and results from the Stanford CRF as event features to train the SVM classifier. Also, we could maintain a `white-list` of verbs which are known occur in the proximity of event entity in text. This list can be in turn be used as feature to the SVM classifier. We plan to further extend our knowledge base to include other popular data sources such as DBpedia, DBLP, DBworld etc. Finally we hope that improvements such as these would be a stepping stone for the evolution of a high performing EventSpotter.
