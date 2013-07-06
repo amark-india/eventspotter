@@ -87,7 +87,7 @@ public class EventSpotter
             int startChar = fs.getFeature("begin").getValueAsInteger();
             int endChar = fs.getFeature("end").getValueAsInteger();
             String agent = fs.getFeature("agent").getValueAsString();            
-            String type = fs.getFeature("type").getValueAsString();
+            //String type = fs.getFeature("type").getValueAsString();
             String uri = fs.getFeature("eventId").getValueAsString();
             String confidence =fs.getFeature("confidence").getValueAsString();
             String surrounding =fs.getFeature("Surrounding").getValueAsString();
@@ -105,8 +105,8 @@ public class EventSpotter
                 bw.newLine();
                 bw.write("agent(s):\""+agent+"\"");
                 bw.newLine();
-                bw.write("type:\""+type+"\"");
-                bw.newLine();
+            //    bw.write("type:\""+type+"\"");
+            //    bw.newLine();
                 bw.write("uri:\""+uri+"\"");
                 bw.newLine();
                 bw.write("confidence:"+confidence);
