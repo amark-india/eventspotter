@@ -213,3 +213,7 @@ current wikipedia edit spikes with social network plausibility checks for
 breaking news detection,” CoRR, vol. abs/1303.4702, 2013.
 
 [EventSpotter]: https://github.com/amark-india/eventspotter
+[Institute Eurecom]: https://www.eurecom.fr/en
+[EventMedia_2012preprocessed]: https://github.com/amark-india/eventspotter/tree/master/data/EventMedia_2012preprocessed.csv 
+[github repository]: https://github.com/amark-india/eventspotter
+
