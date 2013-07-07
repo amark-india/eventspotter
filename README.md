@@ -32,7 +32,7 @@ To use EventSpotter with EventMedia database , download the  EventMedia reposito
 Once the import is done, you can start using EventSpotter immediately by adjusting the `/src/fr/eurecom/eventspotter/EventSpotter.java` file at line 36 to `this.dbPath = "jdbc:mysql://localhost/YourDataBaseName;` to point to the database.
 EventSpotter will then use nearly 65K named event entities harvested from Last.fm, Upcoming and Eventful for disambiguation.
 
-Get the Entity Repository (27.4 MB):
+Get the Entity Repository (36.1 MB):
 
 		https://github.com/amark-india/eventspotter/archive/master.zip
 		
