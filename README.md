@@ -59,14 +59,14 @@ Input : unstructured text
 Output : disambiguated musical events
 
 # Start the preprocessing by tokenizing input text
-tokens = tokenize(input)
+ tokens = tokenize(input)
 
-sentences = sentensize(input)
+ sentences = sentensize(input)
 
 #Candidate Selection
-candidates = doSpotting(input, tokens, entries)
-# entries is a list of tokens obtained by tokenizing the list of event titles file
-# candidates are case insensitive matches of tokens with entries
+ candidates = doSpotting(input, tokens, entries)
+ entries is a list of tokens obtained by tokenizing the list of event titles file
+ candidates are case insensitive matches of tokens with entries
 
 #Disambiguation
 for each candidate in candidates
@@ -131,20 +131,9 @@ The mandatory database table is:
 
 * EventMedia
 
-+------------------+----------------+------+-----+---------+-------+
-| Field            | Type           | Null | Key | Default | Extra |
-+------------------+----------------+------+-----+---------+-------+
-| eventId          | varchar(100)   | YES  |     | NULL    |       |
-| eventTitle       | varchar(10000) | YES  |     | NULL    |       |
-| publisher        | varchar(100)   | YES  |     | NULL    |       |
-| date             | varchar(50)    | YES  |     | NULL    |       |
-| location         | varchar(500)   | YES  |     | NULL    |       |
-| category         | varchar(500)   | YES  |     | NULL    |       |
-| agent            | varchar(10000) | YES  |     | NULL    |       |
-| eventDescription | varchar(30000) | YES  |     | NULL    |       |
-+------------------+----------------+------+-----+---------+-------+
-    
-    ## Comparing Your NED Algorithm against EventSpotter
+| eventId, eventTitle, publisher, date, location, category , agent, eventDescription 
+
+## Comparing Your NED Algorithm against EventSpotter
 
 ### Configuring EventSpotter
 
@@ -191,29 +180,29 @@ If you use EventSpotter in your research, please cite EventSpotter:
     }
 
 ## References
-[1] H. Khrouf, V. Milicic, and R. Troncy, “EventMedia live: Exploring
+* H. Khrouf, V. Milicic, and R. Troncy, “EventMedia live: Exploring
 events connections in real-time to enhance content,” in ISWC 2012, Se-
 mantic Web Challenge at 11th International Semantic Web Conference,
 November 11-15, 2012, Boston, USA, (Boston, UNITED STATES), 11
 2012.
-[2] D. Gruhl, M. Nagarajan, J. Pieper, and C. Robson, “Context and domain
+* D. Gruhl, M. Nagarajan, J. Pieper, and C. Robson, “Context and domain
 knowledge enhanced entity spotting in informal text.”
-[3] J. Hassell, B. Aleman-meza, and I. B. Arpinar, “Ontology-driven auto-
+* J. Hassell, B. Aleman-meza, and I. B. Arpinar, “Ontology-driven auto-
 matic entity disambiguation in unstructured text,” in In International
 Semantic Web Conference, pp. 44–57, 2006.
  ̃
-[4] P. N. Mendes, M. Jakob, A. GarcAa-silva,
+* P. N. Mendes, M. Jakob, A. GarcAa-silva,
 and C. Bizer, “Dbpedia spot-
 light: Shedding light on the web of documents,” in In Proceedings of the
 7th International Conference on Semantic Systems (I-Semantics, 2011.
-[5] A. Ritter, S. Clark, and O. Etzioni, “Open domain event extraction from
+* A. Ritter, S. Clark, and O. Etzioni, “Open domain event extraction from
 twitter.”
-[6] T. Steiner, S. van Hooland, and E. Summers, “Mj no more: Using con-
+* T. Steiner, S. van Hooland, and E. Summers, “Mj no more: Using con-
 current wikipedia edit spikes with social network plausibility checks for
 breaking news detection,” CoRR, vol. abs/1303.4702, 2013.
 
 [EventSpotter]: https://github.com/amark-india/eventspotter
-[Institute Eurecom]: https://www.eurecom.fr/en
+[Institut Eurecom]: https://www.eurecom.fr/en
 [EventMedia_2012preprocessed]: https://github.com/amark-india/eventspotter/tree/master/data/EventMedia_2012preprocessed.csv 
 [github repository]: https://github.com/amark-india/eventspotter
 
