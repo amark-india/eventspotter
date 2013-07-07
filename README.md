@@ -12,7 +12,7 @@ If you want to be notified about  news or new releases, send us a mail to:
 ## Introduction to EventSpotter
 
 EventSpotter is currently a framework for musical event detection and disambiguation. Given free form text, it maps occurences of musical event titles onto musical entities registered in the EventMedia dataset. EventSpotter is useful for extracting knowledge about the musical entities, such as artist, date, location, category as well.
-EventMedia is a huge hub of social event data obtained from three public event directories: Last.fm, Eventful and Upcoming and the media directory: Flickr. We use a snapshot of the EventMedia dataset, available at[https://github.com/amark-india/eventspotter/tree/master/data/EventMedia_2012.csv].
+EventMedia is a huge hub of social event data obtained from three public event directories: Last.fm, Eventful and Upcoming. We use a snapshot of the EventMedia dataset, available at[https://github.com/amark-india/eventspotter/tree/master/data/EventMedia_2012.csv].
 EventTitles.list file can be considered an event indexer or lexicon which contains, as the name suggests, titles of all events contained in EventMedia mapped to their respective event id.
 
 ## Requirements
