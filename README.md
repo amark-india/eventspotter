@@ -51,7 +51,8 @@ This will create an EventSpotter.jar including all dependencies.
 
 ## Eventspotter Hands-On
 
-The main classes in EventSpotter are 
+The main classes in EventSpotter are :
+
 =>`fr.eurecom.eventspotter.EventSpotter` for creating the database connections, setting path variables, initiating the spotting of events, annotating the events found in the input file and finally presenting the output in a Json format. 
 =>`fr.eurecom.eventspotter.worker.EventSpotterLight` for preparing the input document and running the disambiguation on the prepared input.
 
