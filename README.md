@@ -96,7 +96,7 @@ for each candidate in candidates:
 	
 endfor
 ###Post processing
-	Add <EVENT> tags to input text 
+	Add `<EVENT>` tags to input text 
 	Display annotated input text 
 	Display spotted events with confidence score in JSON format
 	
@@ -110,13 +110,13 @@ endfor
     
 1. Run the CommandLineDisambiguator:
 
-    `java -Xmx4G -cp EventSpotter.jar -I   <INPUT-FILE> -O   <OUTPUT-FILE>
+    `java -Xmx4G -cp EventSpotter.jar -I   `<INPUT-FILE>` -O   `<OUTPUT-FILE>`
 
 `<INPUT-FILE>` is path to the text file to be annotated with entities. The format for `<INPUT-FILE>` should be plain text with UTF-8 encoding.
 `<OUTPUT-FILE>` is path to the text file which will contain all the event entity spots in JSON format along with a confidence score for each spot.
 Adding the -E <minus eval> option to generate a conll file for evaluation. 
 
-The output will be displayed on the console. The EventSpotter displays an in-place replacement of event entities with  <EVENT>  entity  </EVENT> tags.
+The output will be displayed on the console. The EventSpotter displays an in-place replacement of event entities with  `<EVENT>`  entity  `</EVENT>` tags.
 It also displays the details of each spot in JSON format along with the [http://data.linkedevents.org/] URL for each event. This JSON output is also written into the output file .
 
 ### Input Format
@@ -144,7 +144,7 @@ You can also compare your results on the datasets where we already ran EventSpot
 
 There are two main datasets we created to do research on EventSpotter. Both are available on the [EventSpotter website][EventSpotter].
 Infact, both used a collection of 60 event descriptions selected at random from EventMedia repository. The only difference between the datasets being the way in which they were annotated.
-A candidate spot is annotated with <EVENT> and </EVENT>, this can be easily transformed into the famous CoNLL format.
+A candidate spot is annotated with `<EVENT>` and `</EVENT>`, this can be easily transformed into the famous CoNLL format.
 
 * GS-manual: Contained 115 valid event annotations. The manual annotation was broken down into two passes. In the first pass, an unbiased, rule based manual annotation was performed. In the second pass, the human annotators were given the list of event titles that were being described in the documents. With this posteriori knowledge the human annotators were able to annotate event occurrences which would have otherwise gone unannotated.
 * GS-synthetic: Contained 122 valid event annotations. We carried out a straightforward string comparison between the input text and all event titles in the EventMedia dataset. If there was a match, the spot was annotated as an event.
