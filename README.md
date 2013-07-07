@@ -18,7 +18,7 @@ EventTitles.list file can be considered an event indexer or lexicon which contai
 ## Requirements
 
 EventSpotter was written in Java, and requires Java 6. EventSpotter also needs a MySQL[https://github.com/amark-india/eventspotter/tree/master/data/eventspotterdb.sql] database to run.
-EventSpotter uses a preprocessed snapshot of the EventMedia dataset found at [EventMedia_2012preprocessed.csv]. 
+EventSpotter uses a preprocessed snapshot of the EventMedia dataset found at [EventMedia_2012preprocessed]. 
 The machine that EventSpotter runs on should have a reasonable amount of main memory since we load the eventTitles.list file onto the memory when eventspotter file is executed.
 Since the snapshot of the EventMedia dataset we used contains more than 65K entries, it is important to have sufficient main memory for smooth execution.
 
