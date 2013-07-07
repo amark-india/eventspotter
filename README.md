@@ -115,7 +115,7 @@ Adding the -E <minus eval> option to generate a conll file for evaluation.
 The output will be displayed on the console. The EventSpotter displays an in-place replacement of event entities with <EVENT>entity</EVENT> tags.
 It also displays the details of each spot in JSON format along with the [http://data.linkedevents.org/] URL for each event. This JSON output is also written into the output file .
 
-## Input Format
+### Input Format
 
 The input of EventSpotter is an English language text (as Java String) or file in UTF-8 encoding. 
 
@@ -132,9 +132,7 @@ The mandatory database table is:
 * EventMedia:
 	 eventId, eventTitle, publisher, date, location, category , agent, eventDescription 
 
-## Comparing Your NED Algorithm against EventSpotter
-
-### Configuring EventSpotter
+### Comparing Your NED Algorithm against EventSpotter
 
 You can also compare your results on the datasets where we already ran EventSpotter, see below.
 
