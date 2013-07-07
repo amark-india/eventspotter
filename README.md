@@ -32,11 +32,13 @@ To use EventSpotter with EventMedia database , download the  EventMedia reposito
 Once the import is done, you can start using EventSpotter immediately by adjusting the `/src/fr/eurecom/eventspotter/EventSpotter.java` file at line 36 to `this.dbPath = "jdbc:mysql://localhost/YourDataBaseName;` to point to the database.
 EventSpotter will then use nearly 65K named event entities harvested from Last.fm, Upcoming and Eventful for disambiguation.
 
-Get the Entity Repository (36.1 MB):
+Get the Entity Repository (25.7 MB):
 
 		https://github.com/amark-india/eventspotter/archive/master.zip
+
+Unzip the eventspotter-master.zip file and find the database file @ /eventspotter-master/data/eventspotterdb.sql
 		
-Import it into a postgres database:
+Import it into a database:
 
 		  mysql -u user --password=password <DATABASE> < eventspotterdb.sql
 
@@ -110,7 +112,7 @@ endfor
     
 1. Run the CommandLineDisambiguator:
 
-    `java -Xmx4G -cp EventSpotter.jar -I `<INPUT-FILE>` -O `<OUTPUT-FILE>``
+    `java -Xmx4G -cp EventSpotter.jar -I "<INPUT-FILE>" -O "<OUTPUT-FILE>" `
 
 `<INPUT-FILE>` is path to the text file to be annotated with entities. The format for `<INPUT-FILE>` should be plain text with UTF-8 encoding.
 `<OUTPUT-FILE>` is path to the text file which will contain all the event entity spots in JSON format along with a confidence score for each spot.
