@@ -54,6 +54,8 @@ This will create an EventSpotter.jar including all dependencies.
 The main classes in EventSpotter are :
 
 =>`fr.eurecom.eventspotter.EventSpotter` for creating the database connections, setting path variables, initiating the spotting of events, annotating the events found in the input file and finally presenting the output in a Json format. 
+
+
 =>`fr.eurecom.eventspotter.worker.EventSpotterLight` for preparing the input document and running the disambiguation on the prepared input.
 
 Input : unstructured text 
@@ -70,7 +72,8 @@ Output : disambiguated musical events
  candidates are case insensitive matches of tokens with entries
 
 ###Disambiguation
-for each candidate in candidates
+for each candidate in candidates:
+
 	if candidate doesn''t start with capital letter and first char is not a digit
           then continue to next candidate
 	end if
