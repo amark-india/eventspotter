@@ -175,7 +175,7 @@ The EventSpotter developers are (in alphabetical order):
 
 If you use EventSpotter in your research, please cite EventSpotter:
 
-    @inproceedings{EventSpotter2011,
+    @inproceedings{EventSpotter2013,
       author = {Amar Kadamalakunte, Meghana Sreekanta Murthy, Giuseppe Rizzo, Raphael Troncy},
       title = {{EventSpotter- spotting entities that talk about events}},
       booktitle = {yet to be presented},
