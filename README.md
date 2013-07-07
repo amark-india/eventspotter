@@ -1,4 +1,4 @@
-# EventSpotter - spotting entities that talk about events
+﻿# EventSpotter - spotting entities that talk about events
 
 [EventSpotter][EventSpotter] is the event entity identification and disambiguation system created by the Multimedia Communication Department at [Institut Eurecom]. It identifies occurences of named musical event entities in unstructured text. Most event names are ambiguous, and Eventspotter takes into consideration this ambiguity. 
 
@@ -78,7 +78,7 @@ for each candidate in candidates:
           then continue to next candidate
 	end if
 
-    List<String> agents = geannotateents(eventId)
+    List<String> agents = getagents(eventId)
 	Set<FeatureStructure> foundAgentToks = doSpotting(input, tokens, agents)	
 	
 	if atleast one agent is found in the input text  
@@ -110,13 +110,13 @@ endfor
     
 1. Run the CommandLineDisambiguator:
 
-    `java -Xmx4G -cp EventSpotter.jar -I <INPUT-FILE> -O <OUTPUT-FILE>
+    `java -Xmx4G -cp EventSpotter.jar -I   <INPUT-FILE> -O   <OUTPUT-FILE>
 
 `<INPUT-FILE>` is path to the text file to be annotated with entities. The format for `<INPUT-FILE>` should be plain text with UTF-8 encoding.
 `<OUTPUT-FILE>` is path to the text file which will contain all the event entity spots in JSON format along with a confidence score for each spot.
 Adding the -E <minus eval> option to generate a conll file for evaluation. 
 
-The output will be displayed on the console. The EventSpotter displays an in-place replacement of event entities with <EVENT>entity</EVENT> tags.
+The output will be displayed on the console. The EventSpotter displays an in-place replacement of event entities with  <EVENT>  entity  </EVENT> tags.
 It also displays the details of each spot in JSON format along with the [http://data.linkedevents.org/] URL for each event. This JSON output is also written into the output file .
 
 ### Input Format
@@ -129,7 +129,7 @@ The input of EventSpotter is an English language text (as Java String) or file i
 
 You can deploy EventSpotter with any repository or set of named entities, given that you have aritists and event descriptions(or their logical equivalents) for all entities. The database layout has to conform to the one described here. For a good example instance of all the data please look at [https://github.com/amark-india/eventspotter/tree/master/data/eventspotterdb.sql] .
 
-#### Database Tables
+#### Database Table
     
 The mandatory database table is:
 
