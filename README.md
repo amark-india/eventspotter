@@ -58,17 +58,17 @@ The main classes in EventSpotter are
 Input : unstructured text 
 Output : disambiguated musical events
 
-# Start the preprocessing by tokenizing input text
+### Start the preprocessing by tokenizing input text
  tokens = tokenize(input)
 
  sentences = sentensize(input)
 
-#Candidate Selection
+###Candidate Selection
  candidates = doSpotting(input, tokens, entries)
  entries is a list of tokens obtained by tokenizing the list of event titles file
  candidates are case insensitive matches of tokens with entries
 
-#Disambiguation
+###Disambiguation
 for each candidate in candidates
 	if candidate doesn''t start with capital letter and first char is not a digit
           then continue to next candidate
@@ -91,7 +91,7 @@ for each candidate in candidates
 	endif
 	
 endfor
-#Post processing
+###Post processing
 	Add <EVENT> tags to input text 
 	Display annotated input text 
 	Display spotted events with confidence score in JSON format
@@ -129,9 +129,8 @@ You can deploy EventSpotter with any repository or set of named entities, given 
     
 The mandatory database table is:
 
-* EventMedia
-
-| eventId, eventTitle, publisher, date, location, category , agent, eventDescription 
+* EventMedia:
+	 eventId, eventTitle, publisher, date, location, category , agent, eventDescription 
 
 ## Comparing Your NED Algorithm against EventSpotter
 
