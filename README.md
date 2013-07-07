@@ -40,7 +40,7 @@ Unzip the eventspotter-master.zip file and find the database file @ /eventspotte
 		
 Import it into a database:
 
-		  mysql -u user --password=password <DATABASE> < eventspotterdb.sql
+		mysql -u user --password=password <DATABASE> < eventspotterdb.sql
 
     
 where <DATABASE> is a database on a MySQL server.
@@ -112,7 +112,7 @@ endfor
     
 1. Run the CommandLineDisambiguator:
 
-    `java -Xmx4G -cp EventSpotter.jar -I "<INPUT-FILE>" -O "<OUTPUT-FILE>" `
+    `java -Xmx4G -cp EventSpotter.jar -I <INPUT-FILE> -O <OUTPUT-FILE> `
 
 `<INPUT-FILE>` is path to the text file to be annotated with entities. The format for `<INPUT-FILE>` should be plain text with UTF-8 encoding.
 `<OUTPUT-FILE>` is path to the text file which will contain all the event entity spots in JSON format along with a confidence score for each spot.
