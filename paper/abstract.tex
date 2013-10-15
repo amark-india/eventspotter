@@ -1,0 +1,28 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{url}
+
+\author{Amar, Meghana, Giuseppe, Rapha\"el}
+\title{Spotting Events from Social Live Streams}
+%\title{EventSpotter: Spotting entities that talk about events}
+
+\begin{document}
+\maketitle
+\section{Introduction}
+Social event sharing websites such as last.fm, Eventful, Eventbrite, and Facebook contain the most precise and up to date information related to scheduled or planned musical events. The dynamic nature of these platforms allows to have a continuos stream. Generally an event is characterized by the surface form (name), and additional features such as category, location, time, and agents (who perform the event). Spotting an event therefore means traversing a multi-dimensional space, labelled by a clear ambiguos definition given by the event name. 
+In the literature different approaches have narrowed down the event extraction task in an entity extraction one. But the complexity of the extraction task increases manifold in the event domain. The biggest challenge of this task is to obtain a clear unambiguous definition of an event title. This is because there is a lack of uniform rule based nomenclature with respect to events. For instance, it is common practice for musical events to be named after the artists who are performing at the event. Here, the event title is ``Beth Jeans Houghton'' which is also the name of the performing artist. This brings in a word sense disambiguation problem, where the onus is on comprehending whether the spot refers to the artist or to the event. The next level of complexity is introduced when an event title is created as an amalgamation of the artist names, band names, event venue and at times even the date, using special characters. Here, ``Stay Sharp Album Release Party: Higher Hands + Grilled Lincolns + Pressing Strings'' is an event title as per the information uploaded on the event sharing website ``eventful''. In essence this means any stripping or stop-wording of input text, which would have otherwise been a natural choice for a preprocessing step in any information extraction problem, is completely out of question. This also means the length of an event title may range from just one word to a phrase with many words and punctuations. Further, at times the boundaries of creative license are stretched to the point where events are named with words that don''t even exist in the language vocabulary. Here, ``Pocktoberfest'' is an yearly event which takes place at the ``Pocklington arts center''. But the word ``Pocktoberfest'' does not exist in the English language. If all events followed a standard naming scheme, our task which now seems herculean, would have been average, at best. This shows that the problem of event detection is too complex to be solved by just a linguistic approach or a static knowledge based approach. In this work we explore the plausibility of using a mixture of various NLP and machine learning techniques to event detection and demonstrate that it is possible to obtain an increase in recall even with a linear combination of linguistic and knowledge based approaches grounded on a live stream of social event data to detect event entities in plain text.
+
+\section{Benchmark}
+We have created an in-house benchmark, which has been 
+
+\section{Approach}
+
+\section{Experiments and Results}
+
+
+\section{Discussion and outlook}
+\end{document}
