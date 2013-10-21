@@ -99,7 +99,22 @@ To the best of our knowledge no corpus exists to assess the performances in such
 
 %As we performed manual annotation, we realised that there was an inherent ambiguity in event titles. We found it extremely difficult, at times, to distinguish between event titles and artist names. Mainly because events were often titled as a mash up of the artist names, venue and sometimes the date of occurrence. Due to this ambiguity many event titles were not annotated despite strict adherence to the annotation rules. Thus, it made sense to not rely solely on the annotators'' knowledge, but in fact, partially adopt the synthetic annotation approach in order to generate a more robust golden dataset. The manual annotation was broken down into two passes. In the first pass, an unbiased, rule based manual annotation was performed. In the second pass, the human annotators were given the list of event titles that were being described in the documents. With this posteriori knowledge the human annotators were able to annotate event occurrences which would have otherwise gone unnoticed. As human annotators, we leveraged the context of the spot to perform word sense disambiguation. We refrained from annotating those spots where in the event title string was not used to directly refer to the event itself. In the phrase ``Carrie Underwood announces her North American tour Blown Away'', ``Carrie Underwood'' referred to the artist, not the event title and hence was not annotated (see example 8.1). But in another instance, ``Carrie Underwood comes to town this Monday.'' since the annotator knew that Carrie Underwood was the event title and since this string was being used to refer to an event in this context, the spot was annotated as an event (see example 8.2). We observed that this hybrid approach towards manual annotation was effective in improving the golden dataset and this was corroborated by the improvement in performance results as presented in the following section.
 
-{\color{red}{A+M: *URGENT* create a table with the stats of the dataset, i.e. number of token etc. etc.}}
+\begin{table}[h]
+\centering % used for centering table
+\begin{tabular}{c c } % centered columns (4 columns)
+\hline %inserts double horizontal lines
+Description & Values \\ [0.5ex] % inserts table
+%heading
+\hline\hline % inserts single horizontal line
+no of Eventmedia URIs & 60  \\
+total no. of tokens & 7277  \\
+total no. of tokens annotated synthetic annotation & 122  \\
+total no. of tokens annotated manual annotation & 115  \\
+\hline %inserts single line
+\end{tabular}
+\caption{Statistics of Dataset} % title of Table
+\label{tab:manual} % is used to refer this table in the text
+\end{table}
 
 \section{Experiments and Results}
 We performed 10-fold cross validation and found that the EventSpotter performed better than the Stanford CRF in terms of recall and F-measure. Results are computed using the conlleval script\footnote{\url{http://www.cnts.ua.ac.be/conll2002/ner/bin/conlleval.txt}} and plotted using R.
