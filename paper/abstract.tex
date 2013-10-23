@@ -30,6 +30,11 @@ In essence this means any stripping or stop-wording of input text, which would h
 The live nature of the event detection makes further complex the extraction process, that results in a partial lack of benchmark from which to start a canonical natural language chain. In this work we explore the plausibility of using a mixture of various information extraction and semantic web techniques to event detection and demonstrate that it is possible to obtain an increase in recall even with a linear combination of linguistic and knowledge based approaches grounded on a live stream of social event data to spot and disambiguate event entities in plain text.
 
 \section{Approach}
+\begin{figure}
+\includegraphics[width=\textwidth]{architecture.pdf}
+\caption{EventSpotter system}
+\label{fig:architecture}
+\end{figure}
 The live social event data stream is pivotal for our approach. We use the Eventmedia dataset~\cite{krouf2012}, which offers an always updated window on the events which are spread across different social platforms. We incrementally compute snapshots of the dataset and build our event lexicon indexer on top of it. This acts as an event knowledge base, \textit{de-facto} bulk of the proposed work. Our approach is then composed of the following stages: \textit{i)} preprocessing, \textit{ii)} candidate selection and \textit{iii)} disambiguation. \textit{i)} is orthogonally applied for normalizing the Eventmedia events and for every textual input; the data is first tokenized, then converted to the CoNLL IOB format. To aid the second stage, we added five additional features to the dataset: capitalization information (initial capital, all caps), prefix (first three letters of the token), suffix (last three letters of the token), whether token starts with a digit.
 \textit{ii)} checks for a case-insensitive match with the tokenized version of the indexer of events. 
 %The reason for performing such a case insensitive match is to ensure that we encompass all candidate event names, without losing any because of an insignificant case-sensitive mismatch. We call this type of mismatch insignificant because of the fact that since we consider unstructured input text, it is quite possible that event names may not be highlighted consistently in the same manner of case. 
@@ -82,11 +87,7 @@ Figure~\ref{fig:architecture} shows the architectural diagram of the proposed ap
 % Display spotted events with confidence score in JSON format
 %\end{lstlisting}
 
-\begin{figure}
-\includegraphics[width=\textwidth]{architecture}
-\caption{EventSpotter system}
-\label{fig:architecture}
-\end{figure}
+
 
 
 \section{Benchmark}
